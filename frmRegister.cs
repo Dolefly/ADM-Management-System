@@ -146,5 +146,43 @@ namespace ADM_Management_System
                 e.Handled = true;
             }
         }
+
+        private void LvDelegates_DoubleClick(object sender, EventArgs e)
+        {
+            EDIT_DELEGATE();
+        }
+        void EDIT_DELEGATE()
+        {
+            try
+            {
+                var tsc = lvDelegates.SelectedItems[0].Text;
+                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,(Division.`Name`) AS Division FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID WHERE Register.TSC_No ='{tsc}' ";
+                conn.Open();
+                var cmd = new MySqlCommand(sql,conn);
+                var dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    frmDelegate d = new frmDelegate();
+
+                    d.txtName.Text = dr.GetString("Name");
+                    d.Text = dr.GetString("Name");
+                    d.txtTSC.Text = dr.GetString("TSC_No");
+                    d.txtIDNumber.Text = dr.GetString("ID_Number");
+                    d.txtPhone.Text = dr.GetString("Phone");
+                    d.txtSchool.Text = dr.GetString("School");
+                    d.cmbDivision.Text = dr.GetString("Division");
+                    d.ShowDialog();
+                }
+                dr.Dispose();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

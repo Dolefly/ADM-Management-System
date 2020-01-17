@@ -99,6 +99,7 @@
             this.lvDelegates.UseCompatibleStateImageBehavior = false;
             this.lvDelegates.View = System.Windows.Forms.View.Details;
             this.lvDelegates.SelectedIndexChanged += new System.EventHandler(this.LvDelegates_SelectedIndexChanged);
+            this.lvDelegates.DoubleClick += new System.EventHandler(this.LvDelegates_DoubleClick);
             // 
             // columnHeader1
             // 
