@@ -66,5 +66,10 @@ namespace ADM_Management_System
             DBConnector db = new DBConnector();
             db.ShowDialog();
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            this.Text = "AMS SYSTEM Version " + Application.ProductVersion; 
+        }
     }
 }

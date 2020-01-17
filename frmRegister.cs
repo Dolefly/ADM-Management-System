@@ -6,6 +6,7 @@ namespace ADM_Management_System
 {
     public partial class frmRegister : Form
     {
+        MySqlConnection conn = DBUtils.GetDBConnection();
         public frmRegister()
         {
 
@@ -54,8 +55,41 @@ namespace ADM_Management_System
                     ls.SubItems.Add(dr.GetString("School"));
                     ls.SubItems.Add(dr.GetString("Division"));
                 }
+                dr.Dispose();
+
+                var sql2 = "SELECT COUNT(*) AS Total FROM Register";
+                var cmd2 = new MySqlCommand(sql2, conn);
+                var dr2 = cmd2.ExecuteReader();
+
+                while (dr2.Read())
+                {
+                    this.Text = ("Total Delegates:" + dr2.GetString("Total"));
+                }
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        void DELETE()
+        {
+            try
+            {
+                var tsc = lvDelegates.SelectedItems[0].Text;
+                var sql = $"DELETE FROM Register WHERE TSC_No='{tsc}'";
+                conn.Open();
+                var cmd = new MySqlCommand(sql,conn);
+
+                var dr = cmd.ExecuteNonQuery();
+
+                MessageBox.Show(tsc + " removed successfuly");
+                MASTER_REGISTER();
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -73,6 +107,44 @@ namespace ADM_Management_System
             }
 
             return null;
+        }
+
+        private void LvDelegates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+            btnRemove.Enabled = true;
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            if (lvDelegates.SelectedItems.Count == 0)
+            {
+
+                return;
+            }
+            else
+            {
+                var TSC = lvDelegates.SelectedItems[0].Text;
+                DialogResult rs = MessageBox.Show("Are you sure you want to remove TSC Number:" + TSC + " from Delegate Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (rs == DialogResult.Yes)
+                {
+                    DELETE();
+                   // MessageBox.Show(TSC + " removed succesfuly!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (rs == DialogResult.No)
+                {
+
+                }
+            }
+        }
+
+        private void TxtFind_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
