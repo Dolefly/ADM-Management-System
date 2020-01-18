@@ -16,10 +16,8 @@ namespace ADM_Management_System
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmMain f = new frmMain();
-            f.btnEnabler.PerformClick();
-
             this.Close();
+
         }
 
         private void FrmRegister_FormClosing(object sender, FormClosingEventArgs e)
@@ -41,7 +39,7 @@ namespace ADM_Management_System
             MySqlConnection conn = DBUtils.GetDBConnection();
             try
             {
-                var sql = "SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,(Division.`Name`) AS Division FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID ORDER BY Register.TSC_No ASC";
+                var sql = "SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,(Division.`Name`) AS Division,(Status_Code.Status) AS Status FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code ORDER BY Register.TSC_No ASC";
                 conn.Open();
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteReader();
@@ -54,6 +52,8 @@ namespace ADM_Management_System
                     ls.SubItems.Add(dr.GetString("Phone"));
                     ls.SubItems.Add(dr.GetString("School"));
                     ls.SubItems.Add(dr.GetString("Division"));
+                    ls.SubItems.Add(dr.GetString("Status"));
+
                 }
                 dr.Dispose();
 
@@ -156,7 +156,7 @@ namespace ADM_Management_System
             try
             {
                 var tsc = lvDelegates.SelectedItems[0].Text;
-                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,(Division.`Name`) AS Division FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID WHERE Register.TSC_No ='{tsc}' ";
+                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,(Division.`Name`) AS Division,Status_Code.Status FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code WHERE Register.TSC_No ='{tsc}' ";
                 conn.Open();
                 var cmd = new MySqlCommand(sql,conn);
                 var dr = cmd.ExecuteReader();
@@ -171,6 +171,8 @@ namespace ADM_Management_System
                     d.txtPhone.Text = dr.GetString("Phone");
                     d.txtSchool.Text = dr.GetString("School");
                     d.cmbDivision.Text = dr.GetString("Division");
+                    d.txtStatus.Text = dr.GetString("Status");
+
                     d.ShowDialog();
                 }
                 dr.Dispose();

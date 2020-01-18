@@ -32,20 +32,23 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTSC = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIDNumber = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtSchool = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cmbDivision = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSchool = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtIDNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTSC = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.btnAddEdit = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbStatusCode = new System.Windows.Forms.ComboBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,9 +58,9 @@
             // 
             this.pictureBox1.Image = global::ADM_Management_System.Properties.Resources.edit;
             this.pictureBox1.Location = new System.Drawing.Point(287, 197);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 105);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 167);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -66,7 +69,7 @@
             // 
             this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(15, 34);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(254, 23);
             this.txtName.TabIndex = 1;
@@ -83,6 +86,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtStatus);
+            this.groupBox1.Controls.Add(this.cmbStatusCode);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cmbDivision);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtSchool);
@@ -96,88 +102,21 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Location = new System.Drawing.Point(1, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(278, 311);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(278, 360);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // label2
+            // cmbDivision
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "TSC NO:";
-            // 
-            // txtTSC
-            // 
-            this.txtTSC.Enabled = false;
-            this.txtTSC.Location = new System.Drawing.Point(15, 82);
-            this.txtTSC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTSC.Name = "txtTSC";
-            this.txtTSC.Size = new System.Drawing.Size(254, 23);
-            this.txtTSC.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 111);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "ID NO:";
-            // 
-            // txtIDNumber
-            // 
-            this.txtIDNumber.Enabled = false;
-            this.txtIDNumber.Location = new System.Drawing.Point(15, 130);
-            this.txtIDNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtIDNumber.Name = "txtIDNumber";
-            this.txtIDNumber.Size = new System.Drawing.Size(254, 23);
-            this.txtIDNumber.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 159);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "PHONE:";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Enabled = false;
-            this.txtPhone.Location = new System.Drawing.Point(15, 178);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(254, 23);
-            this.txtPhone.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 207);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "SCHOOL:";
-            // 
-            // txtSchool
-            // 
-            this.txtSchool.Enabled = false;
-            this.txtSchool.Location = new System.Drawing.Point(15, 226);
-            this.txtSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtSchool.Name = "txtSchool";
-            this.txtSchool.Size = new System.Drawing.Size(254, 23);
-            this.txtSchool.TabIndex = 10;
+            this.cmbDivision.FormattingEnabled = true;
+            this.cmbDivision.Location = new System.Drawing.Point(15, 274);
+            this.cmbDivision.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDivision.Name = "cmbDivision";
+            this.cmbDivision.Size = new System.Drawing.Size(254, 24);
+            this.cmbDivision.TabIndex = 12;
             // 
             // label6
             // 
@@ -189,71 +128,169 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "DIVISION:";
             // 
-            // cmbDivision
+            // txtSchool
             // 
-            this.cmbDivision.FormattingEnabled = true;
-            this.cmbDivision.Location = new System.Drawing.Point(15, 274);
-            this.cmbDivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbDivision.Name = "cmbDivision";
-            this.cmbDivision.Size = new System.Drawing.Size(254, 24);
-            this.cmbDivision.TabIndex = 12;
+            this.txtSchool.Enabled = false;
+            this.txtSchool.Location = new System.Drawing.Point(15, 226);
+            this.txtSchool.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSchool.Name = "txtSchool";
+            this.txtSchool.Size = new System.Drawing.Size(254, 23);
+            this.txtSchool.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 207);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "SCHOOL:";
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Enabled = false;
+            this.txtPhone.Location = new System.Drawing.Point(15, 178);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(254, 23);
+            this.txtPhone.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 159);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "PHONE:";
+            // 
+            // txtIDNumber
+            // 
+            this.txtIDNumber.Enabled = false;
+            this.txtIDNumber.Location = new System.Drawing.Point(15, 130);
+            this.txtIDNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIDNumber.Name = "txtIDNumber";
+            this.txtIDNumber.Size = new System.Drawing.Size(254, 23);
+            this.txtIDNumber.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 111);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "ID NO:";
+            // 
+            // txtTSC
+            // 
+            this.txtTSC.Enabled = false;
+            this.txtTSC.Location = new System.Drawing.Point(15, 82);
+            this.txtTSC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTSC.Name = "txtTSC";
+            this.txtTSC.Size = new System.Drawing.Size(254, 23);
+            this.txtTSC.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "TSC NO:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnCancel);
+            this.groupBox2.Controls.Add(this.BtnSave);
+            this.groupBox2.Controls.Add(this.btnAddEdit);
             this.groupBox2.Location = new System.Drawing.Point(287, 4);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(163, 190);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(11, 20);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "EDIT";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(9, 126);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(143, 46);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // button2
+            // BtnSave
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(9, 73);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "SAVE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnSave.Enabled = false;
+            this.BtnSave.Location = new System.Drawing.Point(9, 73);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(143, 46);
+            this.BtnSave.TabIndex = 1;
+            this.BtnSave.Text = "SAVE";
+            this.BtnSave.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAddEdit
             // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(9, 126);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 46);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "CANCEL";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAddEdit.Location = new System.Drawing.Point(11, 20);
+            this.btnAddEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddEdit.Name = "btnAddEdit";
+            this.btnAddEdit.Size = new System.Drawing.Size(143, 46);
+            this.btnAddEdit.TabIndex = 0;
+            this.btnAddEdit.Text = "EDIT";
+            this.btnAddEdit.UseVisualStyleBackColor = true;
+            this.btnAddEdit.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 302);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "STATUS:";
+            // 
+            // cmbStatusCode
+            // 
+            this.cmbStatusCode.Enabled = false;
+            this.cmbStatusCode.FormattingEnabled = true;
+            this.cmbStatusCode.Location = new System.Drawing.Point(16, 323);
+            this.cmbStatusCode.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbStatusCode.Name = "cmbStatusCode";
+            this.cmbStatusCode.Size = new System.Drawing.Size(68, 24);
+            this.cmbStatusCode.TabIndex = 14;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Location = new System.Drawing.Point(92, 323);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(177, 23);
+            this.txtStatus.TabIndex = 15;
             // 
             // frmDelegate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 319);
+            this.ClientSize = new System.Drawing.Size(459, 387);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDelegate";
@@ -261,6 +298,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Delegate";
+            this.Load += new System.EventHandler(this.FrmDelegate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -286,8 +324,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.ComboBox cmbDivision;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnCancel;
+        public System.Windows.Forms.Button BtnSave;
+        public System.Windows.Forms.Button btnAddEdit;
+        public System.Windows.Forms.TextBox txtStatus;
+        public System.Windows.Forms.ComboBox cmbStatusCode;
+        private System.Windows.Forms.Label label7;
     }
 }
