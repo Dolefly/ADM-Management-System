@@ -34,12 +34,12 @@ namespace ADM_Management_System
         {
             MASTER_REGISTER();
         }
-        void MASTER_REGISTER()
+       public void MASTER_REGISTER()
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
             try
             {
-                var sql = "SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,(Division.`Name`) AS Division,(Status_Code.Status) AS Status FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code ORDER BY Register.TSC_No ASC";
+                var sql = "SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,Division.DivisionName AS Division,Status_Code.`Status` FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code ORDER BY Register.TSC_No ASC;";
                 conn.Open();
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteReader();
@@ -156,7 +156,7 @@ namespace ADM_Management_System
             try
             {
                 var tsc = lvDelegates.SelectedItems[0].Text;
-                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,(Division.`Name`) AS Division,Status_Code.Status FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code WHERE Register.TSC_No ='{tsc}' ";
+                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,Status_Code.`Status`,(Division.DivisionName) AS Division FROM Register INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code WHERE Register.TSC_No = '{tsc}' ";
                 conn.Open();
                 var cmd = new MySqlCommand(sql,conn);
                 var dr = cmd.ExecuteReader();
@@ -170,8 +170,9 @@ namespace ADM_Management_System
                     d.txtIDNumber.Text = dr.GetString("ID_Number");
                     d.txtPhone.Text = dr.GetString("Phone");
                     d.txtSchool.Text = dr.GetString("School");
-                    d.cmbDivision.Text = dr.GetString("Division");
+                    d.txtDivision.Text = dr.GetString("Division");
                     d.txtStatus.Text = dr.GetString("Status");
+                   // d.cmbStatusCode.Text = dr.GetString("Code");
 
                     d.ShowDialog();
                 }

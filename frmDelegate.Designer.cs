@@ -32,7 +32,9 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbDivision = new System.Windows.Forms.ComboBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.cmbStatusCode = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSchool = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,9 +48,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.btnAddEdit = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbStatusCode = new System.Windows.Forms.ComboBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.cmbDivision_Code = new System.Windows.Forms.ComboBox();
+            this.txtDivision = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // txtName
             // 
+            this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(15, 34);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
@@ -86,10 +88,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDivision);
+            this.groupBox1.Controls.Add(this.cmbDivision_Code);
             this.groupBox1.Controls.Add(this.txtStatus);
             this.groupBox1.Controls.Add(this.cmbStatusCode);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.cmbDivision);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtSchool);
             this.groupBox1.Controls.Add(this.label5);
@@ -109,14 +112,37 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // cmbDivision
+            // txtStatus
             // 
-            this.cmbDivision.FormattingEnabled = true;
-            this.cmbDivision.Location = new System.Drawing.Point(15, 274);
-            this.cmbDivision.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbDivision.Name = "cmbDivision";
-            this.cmbDivision.Size = new System.Drawing.Size(254, 24);
-            this.cmbDivision.TabIndex = 12;
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Location = new System.Drawing.Point(92, 323);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(177, 23);
+            this.txtStatus.TabIndex = 15;
+            // 
+            // cmbStatusCode
+            // 
+            this.cmbStatusCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatusCode.Enabled = false;
+            this.cmbStatusCode.FormattingEnabled = true;
+            this.cmbStatusCode.Location = new System.Drawing.Point(16, 323);
+            this.cmbStatusCode.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbStatusCode.Name = "cmbStatusCode";
+            this.cmbStatusCode.Size = new System.Drawing.Size(68, 24);
+            this.cmbStatusCode.TabIndex = 14;
+            this.cmbStatusCode.SelectedIndexChanged += new System.EventHandler(this.CmbStatusCode_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 302);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 17);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "STATUS:";
             // 
             // label6
             // 
@@ -130,6 +156,7 @@
             // 
             // txtSchool
             // 
+            this.txtSchool.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSchool.Enabled = false;
             this.txtSchool.Location = new System.Drawing.Point(15, 226);
             this.txtSchool.Margin = new System.Windows.Forms.Padding(4);
@@ -251,34 +278,27 @@
             this.btnAddEdit.UseVisualStyleBackColor = true;
             this.btnAddEdit.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label7
+            // cmbDivision_Code
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 302);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 17);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "STATUS:";
+            this.cmbDivision_Code.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDivision_Code.Enabled = false;
+            this.cmbDivision_Code.FormattingEnabled = true;
+            this.cmbDivision_Code.Location = new System.Drawing.Point(19, 276);
+            this.cmbDivision_Code.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDivision_Code.Name = "cmbDivision_Code";
+            this.cmbDivision_Code.Size = new System.Drawing.Size(68, 24);
+            this.cmbDivision_Code.TabIndex = 16;
+            this.cmbDivision_Code.SelectedIndexChanged += new System.EventHandler(this.CmbDivision_Code_SelectedIndexChanged);
             // 
-            // cmbStatusCode
+            // txtDivision
             // 
-            this.cmbStatusCode.Enabled = false;
-            this.cmbStatusCode.FormattingEnabled = true;
-            this.cmbStatusCode.Location = new System.Drawing.Point(16, 323);
-            this.cmbStatusCode.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbStatusCode.Name = "cmbStatusCode";
-            this.cmbStatusCode.Size = new System.Drawing.Size(68, 24);
-            this.cmbStatusCode.TabIndex = 14;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Enabled = false;
-            this.txtStatus.Location = new System.Drawing.Point(92, 323);
-            this.txtStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(177, 23);
-            this.txtStatus.TabIndex = 15;
+            this.txtDivision.Enabled = false;
+            this.txtDivision.Location = new System.Drawing.Point(92, 277);
+            this.txtDivision.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDivision.Name = "txtDivision";
+            this.txtDivision.ReadOnly = true;
+            this.txtDivision.Size = new System.Drawing.Size(177, 23);
+            this.txtDivision.TabIndex = 17;
             // 
             // frmDelegate
             // 
@@ -323,12 +343,13 @@
         public System.Windows.Forms.TextBox txtTSC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.ComboBox cmbDivision;
         public System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Button BtnSave;
         public System.Windows.Forms.Button btnAddEdit;
         public System.Windows.Forms.TextBox txtStatus;
         public System.Windows.Forms.ComboBox cmbStatusCode;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtDivision;
+        public System.Windows.Forms.ComboBox cmbDivision_Code;
     }
 }
