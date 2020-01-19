@@ -57,6 +57,12 @@ namespace ADM_Management_System
             {
                 ENABLE_EDIT();
             }
+            if (btnAddEdit.Text == "NEW")
+            {
+                ENABLE_EDIT();
+                txtTSC.Enabled = true;
+            }
+           
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -135,14 +141,25 @@ namespace ADM_Management_System
             var idnumber = txtIDNumber.Text;
             var phone = txtPhone.Text;
             var school = txtSchool.Text;
-            var divison = txtDivision.Text;
+            var divison = cmbDivision_Code.Text;
             var status = cmbStatusCode.Text;
             try{
-               // var sql = $
+                var sql = $"INSERT INTO Register(TSC_No,ID_Number,Name,Phone,Division_ID,Status) VALUES('{tsc}','{idnumber}','{name}','{phone}','{divison}','{status}') ON DUPLICATE KEY UPDATE ID_Number='{idnumber}',Name='{name}',Phone='{phone}',Division_ID='{divison}',Status='{status}';";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteNonQuery();
+
+               // MessageBox.Show(name + "saved successfuly!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                var sql2 = $"INSERT INTO School(Tsc_No,Name) VALUES('{tsc}','{school}') ON DUPLICATE KEY UPDATE Name='{school}'";
+                var cmd2 = new MySqlCommand(sql2, conn);
+                var dr2 = cmd2.ExecuteNonQuery();
+
+                MessageBox.Show(name + " saved successfuly!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -197,6 +214,30 @@ namespace ADM_Management_System
             finally
             {
                 conn.Close();
+            }
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            if(cmbDivision_Code.Text != "")
+            {
+                if(cmbStatusCode.Text != "")
+                {
+                    UPDATE_ADD_DELEGATE();
+
+                    DISABLE_EDIT();
+
+                  
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Select Status!", "Status", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select Division!", "Division", MessageBoxButtons.OK);
             }
         }
     }

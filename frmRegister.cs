@@ -39,7 +39,7 @@ namespace ADM_Management_System
             MySqlConnection conn = DBUtils.GetDBConnection();
             try
             {
-                var sql = "SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,Division.DivisionName AS Division,Status_Code.`Status` FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code ORDER BY Register.TSC_No ASC;";
+                var sql = "SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,Division.DivisionName AS Division,Status_Code.`Status` FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code ORDER BY Register.TSC_No ASC;";
                 conn.Open();
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteReader();
@@ -156,7 +156,7 @@ namespace ADM_Management_System
             try
             {
                 var tsc = lvDelegates.SelectedItems[0].Text;
-                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,Status_Code.`Status`,(Division.DivisionName) AS Division FROM Register INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN School ON School.Tsc_No = Register.TSC_No AND Register.School_ID = School.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code WHERE Register.TSC_No = '{tsc}' ";
+                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,Status_Code.`Status`,(Division.DivisionName) AS Division FROM Register INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN School ON School.Tsc_No = Register.TSC_No INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code WHERE Register.TSC_No = '{tsc}' ";
                 conn.Open();
                 var cmd = new MySqlCommand(sql,conn);
                 var dr = cmd.ExecuteReader();
@@ -186,6 +186,18 @@ namespace ADM_Management_System
             {
                 conn.Close();
             }
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            MASTER_REGISTER();
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+            frmDelegate d = new frmDelegate();
+            d.btnAddEdit.Text = "NEW";
+            d.ShowDialog();
         }
     }
 }

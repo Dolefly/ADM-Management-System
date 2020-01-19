@@ -266,6 +266,7 @@
             this.BtnSave.TabIndex = 1;
             this.BtnSave.Text = "SAVE";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnAddEdit
             // 
