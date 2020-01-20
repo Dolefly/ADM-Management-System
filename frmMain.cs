@@ -21,23 +21,30 @@ namespace ADM_Management_System
       
         private void Button1_Click(object sender, EventArgs e)
         {
-
-            frmRegister frm = null;
-            if ((frm = (frmRegister)IsFormAlreadyOpen(typeof(frmRegister))) == null)
+            if (pnMain.Controls.Count < 1)
             {
-                frm = new frmRegister();
-                frm.TopLevel = false;
-                pnMain.Controls.Add(frm);
-                frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-               
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
+                frmRegister frm = null;
+                if ((frm = (frmRegister)IsFormAlreadyOpen(typeof(frmRegister))) == null)
+                {
+                    frm = new frmRegister();
+                    frm.TopLevel = false;
+                    pnMain.Controls.Add(frm);
+                    frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Already Open!", "DELEGATE REGISTER", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //frm.Close();
+                }
             }
-            else {
-                MessageBox.Show("Already Open!","DELEGATE REGISTER",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                //frm.Close();
+            else
+            {
+                MessageBox.Show("Close open window first!", "REGISTER", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           
+
         }
 
 
@@ -74,7 +81,35 @@ namespace ADM_Management_System
 
         private void RateSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            frmRate r = new frmRate();
+            r.ShowDialog();
+        }
+
+        private void btnAttendance_Click(object sender, EventArgs e)
+        {
+            if (pnMain.Controls.Count < 1)
+            {
+                frmAttendance frm = null;
+                if ((frm = (frmAttendance)IsFormAlreadyOpen(typeof(frmAttendance))) == null)
+                {
+                    frm = new frmAttendance();
+                    frm.TopLevel = false;
+                    pnMain.Controls.Add(frm);
+                    frm.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Already Open!", "ATTENDANCE REGISTER", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //frm.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Close any open window first!", "ATTENDANCE REGISTER", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
