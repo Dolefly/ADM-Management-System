@@ -47,14 +47,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvAttendance = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -256,7 +252,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.listView1);
+            this.groupBox3.Controls.Add(this.lvAttendance);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 137);
             this.groupBox3.Name = "groupBox3";
@@ -264,62 +260,37 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
-            // listView1
+            // lvAttendance
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader1,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(844, 295);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvAttendance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.lvAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvAttendance.FullRowSelect = true;
+            this.lvAttendance.HideSelection = false;
+            this.lvAttendance.Location = new System.Drawing.Point(3, 16);
+            this.lvAttendance.Name = "lvAttendance";
+            this.lvAttendance.Size = new System.Drawing.Size(844, 295);
+            this.lvAttendance.TabIndex = 0;
+            this.lvAttendance.UseCompatibleStateImageBehavior = false;
+            this.lvAttendance.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader2
+            // columnHeader4
             // 
-            this.columnHeader2.Text = "#";
-            this.columnHeader2.Width = 40;
+            this.columnHeader4.Text = "Date";
+            this.columnHeader4.Width = 100;
             // 
-            // columnHeader3
+            // columnHeader9
             // 
-            this.columnHeader3.Text = "Member No";
-            this.columnHeader3.Width = 120;
+            this.columnHeader9.Text = "Description";
+            this.columnHeader9.Width = 500;
             // 
-            // columnHeader5
+            // columnHeader10
             // 
-            this.columnHeader5.Text = "Debit";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader5.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Credit";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader6.Width = 100;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Balance";
-            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader7.Width = 100;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Date";
-            this.columnHeader8.Width = 80;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Description";
-            this.columnHeader1.Width = 300;
+            this.columnHeader10.Text = "Amount";
+            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader10.Width = 100;
             // 
             // frmAttendance
             // 
@@ -365,13 +336,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ListView lvAttendance;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }

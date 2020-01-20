@@ -15,6 +15,7 @@ namespace ADM_Management_System
         private void frmAttendance_Load(object sender, EventArgs e)
         {
             txtFind.Focus();
+            ATTENDANCE();
         }
         void FIND_MEMBER()
         {
@@ -33,6 +34,32 @@ namespace ADM_Management_System
                     lblName.Text = dr.GetString("Name");
                     lblSchool.Text = dr.GetString("School");
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        void ATTENDANCE()
+        {
+            try
+            {
+                var sql = "SELECT (Attendance.Date) AS Date,CONCAT(Register.`Name`, ' _ ', '[', Attendance.Member_No, ']', ' _ ', School.`Name`) AS Description,Attendance.Amount FROM Attendance INNER JOIN Register ON Attendance.Member_No = Register.TSC_No INNER JOIN School ON School.Tsc_No = Register.TSC_No ORDER BY Attendance.Date ASC";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    var lst = lvAttendance.Items.Add(dr.GetString("Date"));
+                    lst.SubItems.Add(dr.GetString("Description"));
+                    lst.SubItems.Add(dr.GetString("Amount"));
+                }
+
             }
             catch(Exception ex)
             {
