@@ -151,7 +151,7 @@ namespace ADM_Management_System
         {
             EDIT_DELEGATE();
         }
-        void EDIT_DELEGATE()
+        public void EDIT_DELEGATE()
         {
             try
             {
