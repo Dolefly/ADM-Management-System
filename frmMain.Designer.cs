@@ -39,6 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRegister = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.rateSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,8 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dBSettingsToolStripMenuItem});
+            this.dBSettingsToolStripMenuItem,
+            this.rateSettingsToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.editToolStripMenuItem.Text = "Settings";
@@ -74,7 +76,7 @@
             // dBSettingsToolStripMenuItem
             // 
             this.dBSettingsToolStripMenuItem.Name = "dBSettingsToolStripMenuItem";
-            this.dBSettingsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.dBSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dBSettingsToolStripMenuItem.Text = "DB Settings";
             this.dBSettingsToolStripMenuItem.Click += new System.EventHandler(this.DBSettingsToolStripMenuItem_Click);
             // 
@@ -131,6 +133,13 @@
             this.pnMain.Size = new System.Drawing.Size(917, 539);
             this.pnMain.TabIndex = 4;
             // 
+            // rateSettingsToolStripMenuItem
+            // 
+            this.rateSettingsToolStripMenuItem.Name = "rateSettingsToolStripMenuItem";
+            this.rateSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rateSettingsToolStripMenuItem.Text = "Rate Settings";
+            this.rateSettingsToolStripMenuItem.Click += new System.EventHandler(this.RateSettingsToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +178,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dBSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rateSettingsToolStripMenuItem;
     }
 }
 

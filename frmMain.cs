@@ -71,5 +71,10 @@ namespace ADM_Management_System
         {
             this.Text = "AMS SYSTEM Version " + Application.ProductVersion; 
         }
+
+        private void RateSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

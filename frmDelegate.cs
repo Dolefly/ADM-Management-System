@@ -240,5 +240,23 @@ namespace ADM_Management_System
                 MessageBox.Show("Select Division!", "Division", MessageBoxButtons.OK);
             }
         }
+
+        private void TxtTSC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void TxtTSC_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

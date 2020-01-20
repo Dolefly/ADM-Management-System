@@ -32,6 +32,8 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDivision = new System.Windows.Forms.TextBox();
+            this.cmbDivision_Code = new System.Windows.Forms.ComboBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.cmbStatusCode = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.btnAddEdit = new System.Windows.Forms.Button();
-            this.cmbDivision_Code = new System.Windows.Forms.ComboBox();
-            this.txtDivision = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,6 +111,28 @@
             this.groupBox1.Size = new System.Drawing.Size(278, 360);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // txtDivision
+            // 
+            this.txtDivision.Enabled = false;
+            this.txtDivision.Location = new System.Drawing.Point(92, 277);
+            this.txtDivision.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDivision.Name = "txtDivision";
+            this.txtDivision.ReadOnly = true;
+            this.txtDivision.Size = new System.Drawing.Size(177, 23);
+            this.txtDivision.TabIndex = 17;
+            // 
+            // cmbDivision_Code
+            // 
+            this.cmbDivision_Code.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDivision_Code.Enabled = false;
+            this.cmbDivision_Code.FormattingEnabled = true;
+            this.cmbDivision_Code.Location = new System.Drawing.Point(19, 276);
+            this.cmbDivision_Code.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbDivision_Code.Name = "cmbDivision_Code";
+            this.cmbDivision_Code.Size = new System.Drawing.Size(68, 24);
+            this.cmbDivision_Code.TabIndex = 16;
+            this.cmbDivision_Code.SelectedIndexChanged += new System.EventHandler(this.CmbDivision_Code_SelectedIndexChanged);
             // 
             // txtStatus
             // 
@@ -182,6 +204,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(254, 23);
             this.txtPhone.TabIndex = 8;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTSC_KeyPress);
             // 
             // label4
             // 
@@ -201,6 +224,7 @@
             this.txtIDNumber.Name = "txtIDNumber";
             this.txtIDNumber.Size = new System.Drawing.Size(254, 23);
             this.txtIDNumber.TabIndex = 6;
+            this.txtIDNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTSC_KeyPress);
             // 
             // label3
             // 
@@ -220,6 +244,7 @@
             this.txtTSC.Name = "txtTSC";
             this.txtTSC.Size = new System.Drawing.Size(254, 23);
             this.txtTSC.TabIndex = 4;
+            this.txtTSC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTSC_KeyPress_1);
             // 
             // label2
             // 
@@ -227,9 +252,9 @@
             this.label2.Location = new System.Drawing.Point(15, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "TSC NO:";
+            this.label2.Text = "MEMBER NO:";
             // 
             // groupBox2
             // 
@@ -278,28 +303,6 @@
             this.btnAddEdit.Text = "EDIT";
             this.btnAddEdit.UseVisualStyleBackColor = true;
             this.btnAddEdit.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // cmbDivision_Code
-            // 
-            this.cmbDivision_Code.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDivision_Code.Enabled = false;
-            this.cmbDivision_Code.FormattingEnabled = true;
-            this.cmbDivision_Code.Location = new System.Drawing.Point(19, 276);
-            this.cmbDivision_Code.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbDivision_Code.Name = "cmbDivision_Code";
-            this.cmbDivision_Code.Size = new System.Drawing.Size(68, 24);
-            this.cmbDivision_Code.TabIndex = 16;
-            this.cmbDivision_Code.SelectedIndexChanged += new System.EventHandler(this.CmbDivision_Code_SelectedIndexChanged);
-            // 
-            // txtDivision
-            // 
-            this.txtDivision.Enabled = false;
-            this.txtDivision.Location = new System.Drawing.Point(92, 277);
-            this.txtDivision.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDivision.Name = "txtDivision";
-            this.txtDivision.ReadOnly = true;
-            this.txtDivision.Size = new System.Drawing.Size(177, 23);
-            this.txtDivision.TabIndex = 17;
             // 
             // frmDelegate
             // 
