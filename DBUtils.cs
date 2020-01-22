@@ -16,7 +16,7 @@ namespace ADM_Management_System
                 var sIP = key.GetValue("ServerIP").ToString();
                 var sPort = int.Parse(key.GetValue("ServerPort").ToString());
                 var sUsername = key.GetValue("ServerUsername").ToString();
-                var sPass = key.GetValue("ServerUsername").ToString();
+                var sPass = key.GetValue("ServerPass").ToString();
 
 
                 var host = sIP;
