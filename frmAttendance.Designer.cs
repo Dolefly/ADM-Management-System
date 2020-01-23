@@ -166,6 +166,7 @@
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(140, 29);
             this.txtFind.TabIndex = 0;
+            this.txtFind.TextChanged += new System.EventHandler(this.TxtFind_TextChanged);
             this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
             // 
             // button1

@@ -30,11 +30,17 @@ namespace ADM_Management_System
 
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteReader();
-                while (dr.Read())
+                if (dr.Read())
                 {
                     lblDivision.Text = dr.GetString("Division");
                     lblName.Text = dr.GetString("Name");
                     lblSchool.Text = dr.GetString("School");
+                }
+                else
+                {
+                    lblName.Text = "";
+                    lblDivision.Text = "";
+                    lblSchool.Text = "";
                 }
             }
             catch(Exception ex)
@@ -131,7 +137,7 @@ namespace ADM_Management_System
                 MessageBox.Show(lblName.Text + " marked as present.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
           }
             catch(Exception ex) {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(lblName.Text + " has already been marked as present!","Attendance",MessageBoxButtons.OK,MessageBoxIcon.Error  );
             }
             finally
             {
@@ -252,6 +258,11 @@ namespace ADM_Management_System
                     MessageBox.Show("Nobody to mark as present!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void TxtFind_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

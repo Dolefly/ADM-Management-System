@@ -14,6 +14,7 @@ namespace ADM_Management_System
         private void frmRate_Load(object sender, EventArgs e)
         {
 
+           this.Text="Current Rate: " + myFunctions.GetRate();
         }
         void SAVE()
         {
@@ -30,6 +31,7 @@ namespace ADM_Management_System
                 var dr = cmd.ExecuteNonQuery();
 
                 MessageBox.Show(year + " " + amount + " saved succesfully");
+                
             }
             catch(Exception ex)
             {
@@ -44,6 +46,7 @@ namespace ADM_Management_System
         private void btnSave_Click(object sender, EventArgs e)
         {
             SAVE();
+            this.Text="Current Rate: " + myFunctions.GetRate();
         }
     }
 }

@@ -109,7 +109,7 @@ namespace ADM_Management_System
             else
             {
               
-                MessageBox.Show( " Close any open window first!", "ATTENDANCE REGISTER", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show( " Close open window first!", "ATTENDANCE REGISTER", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
