@@ -112,5 +112,11 @@ namespace ADM_Management_System
                 MessageBox.Show( " Close open window first!", "ATTENDANCE REGISTER", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            frmExpense x = new frmExpense();
+            x.ShowDialog();
+        }
     }
 }

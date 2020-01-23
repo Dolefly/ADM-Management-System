@@ -47,13 +47,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tspRate = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lvAttendance = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tspRate = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -167,6 +167,7 @@
             this.txtFind.Size = new System.Drawing.Size(140, 29);
             this.txtFind.TabIndex = 0;
             this.txtFind.TextChanged += new System.EventHandler(this.TxtFind_TextChanged);
+            this.txtFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtFind_KeyPress);
             this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
             // 
             // button1
@@ -211,6 +212,7 @@
             this.txtLookUP.Name = "txtLookUP";
             this.txtLookUP.Size = new System.Drawing.Size(140, 29);
             this.txtLookUP.TabIndex = 11;
+            this.txtLookUP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtLookUP_KeyPress);
             // 
             // btnLookUp
             // 
@@ -258,6 +260,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "EXPENSE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
             // statusStrip1
             // 
@@ -269,6 +272,18 @@
             this.statusStrip1.Size = new System.Drawing.Size(925, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(33, 17);
+            this.toolStripStatusLabel1.Text = "Rate:";
+            // 
+            // tspRate
+            // 
+            this.tspRate.Name = "tspRate";
+            this.tspRate.Size = new System.Drawing.Size(13, 17);
+            this.tspRate.Text = "0";
             // 
             // groupBox3
             // 
@@ -315,18 +330,6 @@
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "EXPENSE";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(33, 17);
-            this.toolStripStatusLabel1.Text = "Rate:";
-            // 
-            // tspRate
-            // 
-            this.tspRate.Name = "tspRate";
-            this.tspRate.Size = new System.Drawing.Size(13, 17);
-            this.tspRate.Text = "0";
             // 
             // frmAttendance
             // 

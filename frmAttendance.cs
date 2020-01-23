@@ -264,5 +264,27 @@ namespace ADM_Management_System
         {
 
         }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            frmExpense ex = new frmExpense();
+            ex.ShowDialog();
+        }
+
+        private void TxtFind_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtLookUP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

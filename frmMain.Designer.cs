@@ -41,6 +41,8 @@
             this.btnAttendance = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +113,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnAttendance);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -129,7 +133,7 @@
             this.btnAttendance.Name = "btnAttendance";
             this.btnAttendance.Size = new System.Drawing.Size(167, 51);
             this.btnAttendance.TabIndex = 1;
-            this.btnAttendance.Text = "Attendance";
+            this.btnAttendance.Text = "ATTENDANCE";
             this.btnAttendance.UseVisualStyleBackColor = false;
             this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
@@ -143,7 +147,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(167, 51);
             this.btnRegister.TabIndex = 0;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -157,6 +161,33 @@
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(917, 539);
             this.pnMain.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(102)))), ((int)(((byte)(214)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(21, 146);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 51);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "EXPENSE";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(102)))), ((int)(((byte)(214)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(21, 213);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 51);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "REPORTS";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // frmMain
             // 
@@ -200,6 +231,8 @@
         private System.Windows.Forms.ToolStripMenuItem dBSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rateSettingsToolStripMenuItem;
         public System.Windows.Forms.Button btnAttendance;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
     }
 }
 

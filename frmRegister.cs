@@ -199,5 +199,10 @@ namespace ADM_Management_System
             d.btnAddEdit.Text = "NEW";
             d.ShowDialog();
         }
+
+        private void TxtFind_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
