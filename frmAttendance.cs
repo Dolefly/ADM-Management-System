@@ -16,6 +16,8 @@ namespace ADM_Management_System
         {
             txtFind.Focus();
             ATTENDANCE();
+
+            tspRate.Text = GetRate();
         }
         void FIND_MEMBER()
         {
@@ -44,6 +46,98 @@ namespace ADM_Management_System
                 conn.Close();
             }
         }
+
+        public static string GetRate()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            string returnValue = null;
+           try
+            {
+               
+                
+                var sql = "SELECT Amount FROM Rate WHERE Year='2020'";
+                conn.Open();
+                var cmd = new MySqlCommand(sql,conn);
+                var dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    returnValue = dr.GetString("Amount");
+                    dr.Dispose();
+                    
+                }
+                else
+                {
+                   return "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return returnValue;
+        }
+
+        public static string GetRetired(string TSC_No)//SELECT MEMBER STATUS EITHER RETIRED or WITHDRAWN
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            string retiredValue = null;
+            
+            try
+            {
+                var sql = $"SELECT Status FROM Register WHERE TSC_No='{TSC_No}'";
+                conn.Open();
+
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    retiredValue = dr.GetString("Status");
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return retiredValue;
+        } 
+
+
+
+        void INSERT_ATTENDANCE()
+        {
+           try
+           {
+                var myDate = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
+                var tsc = txtFind.Text;
+                var amount = GetRate(); 
+
+                var sql = $"INSERT INTO Attendance(Date,Member_No,Amount) VALUES('{myDate}','{tsc}','{amount}')";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteNonQuery();
+
+                MessageBox.Show(lblName.Text + " marked as present.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }//Mark delegate as present
         void ATTENDANCE()
         {
             try
@@ -53,11 +147,13 @@ namespace ADM_Management_System
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteReader();
 
+                lvAttendance.Items.Clear();
+
                 while (dr.Read())
                 {
                     var lst = lvAttendance.Items.Add(dr.GetString("Date"));
                     lst.SubItems.Add(dr.GetString("Description"));
-                    lst.SubItems.Add(dr.GetString("Amount"));
+                   // lst.SubItems.Add(dr.GetString("Amount"));
                 }
 
             }
@@ -125,6 +221,36 @@ namespace ADM_Management_System
             finally
             {
                 conn.Close();
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            var memberNO = txtFind.Text;
+            var tsc = GetRetired(memberNO);
+
+            if (tsc =="50")
+            {
+                MessageBox.Show(lblName.Text + " is retired member");
+            }
+            else
+            {
+                if (txtFind.Text != "")
+                {
+                    if(lblName.Text != "")
+                    {
+                        INSERT_ATTENDANCE();
+                        ATTENDANCE();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Member number doesn't exist!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nobody to mark as present!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

@@ -139,6 +139,7 @@
   <ItemGroup>
     <Content Include="focus64_lnC_1.ico" />
     <Content Include="focus_icon.ico" />
+    <None Include="Resources\background.png" />
     <None Include="Resources\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
