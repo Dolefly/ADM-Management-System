@@ -62,10 +62,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="crtRegister.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crtRegister.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="crtTrans.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crtTrans.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DBConnector.cs">
@@ -129,9 +140,24 @@
     <Compile Include="RegisterRPT.Designer.cs">
       <DependentUpon>RegisterRPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TransRPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransRPT.Designer.cs">
+      <DependentUpon>TransRPT.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="crtRegister.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crtRegister.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crtTrans.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crtTrans.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DBConnector.resx">
       <DependentUpon>DBConnector.cs</DependentUpon>
@@ -167,6 +193,20 @@
     <EmbeddedResource Include="RegisterRPT.resx">
       <DependentUpon>RegisterRPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransRPT.resx">
+      <DependentUpon>TransRPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CompanyDS.xsc">
+      <DependentUpon>CompanyDS.xsd</DependentUpon>
+    </None>
+    <None Include="CompanyDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CompanyDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CompanyDS.xss">
+      <DependentUpon>CompanyDS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -176,6 +216,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TransDS.xsc">
+      <DependentUpon>TransDS.xsd</DependentUpon>
+    </None>
+    <None Include="TransDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransDS.xss">
+      <DependentUpon>TransDS.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

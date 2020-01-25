@@ -286,5 +286,11 @@ namespace ADM_Management_System
                 e.Handled = true;
             }
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            TransRPT tr = new TransRPT();
+            tr.ShowDialog();
+        }
     }
 }

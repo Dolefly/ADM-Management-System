@@ -54,6 +54,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -74,7 +75,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(925, 72);
+            this.groupBox1.Size = new System.Drawing.Size(947, 72);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -84,7 +85,7 @@
             this.lblDivision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDivision.Location = new System.Drawing.Point(737, 36);
+            this.lblDivision.Location = new System.Drawing.Point(759, 36);
             this.lblDivision.Name = "lblDivision";
             this.lblDivision.Size = new System.Drawing.Size(158, 29);
             this.lblDivision.TabIndex = 7;
@@ -96,7 +97,7 @@
             this.lblSchool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSchool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchool.Location = new System.Drawing.Point(530, 36);
+            this.lblSchool.Location = new System.Drawing.Point(552, 36);
             this.lblSchool.Name = "lblSchool";
             this.lblSchool.Size = new System.Drawing.Size(201, 29);
             this.lblSchool.TabIndex = 6;
@@ -108,7 +109,7 @@
             this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(238, 36);
+            this.lblName.Location = new System.Drawing.Point(260, 36);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(283, 29);
             this.lblName.TabIndex = 5;
@@ -119,7 +120,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(734, 16);
+            this.label4.Location = new System.Drawing.Point(756, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 17);
             this.label4.TabIndex = 4;
@@ -130,7 +131,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(527, 16);
+            this.label3.Location = new System.Drawing.Point(549, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 3;
@@ -141,7 +142,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 16);
+            this.label2.Location = new System.Drawing.Point(260, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 2;
@@ -152,7 +153,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 16);
+            this.label1.Location = new System.Drawing.Point(103, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 1;
@@ -162,7 +163,7 @@
             // 
             this.txtFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFind.Location = new System.Drawing.Point(81, 36);
+            this.txtFind.Location = new System.Drawing.Point(103, 36);
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(140, 29);
             this.txtFind.TabIndex = 0;
@@ -174,7 +175,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(87, 19);
+            this.button1.Location = new System.Drawing.Point(47, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 40);
             this.button1.TabIndex = 8;
@@ -185,7 +186,7 @@
             // btnNew
             // 
             this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNew.Location = new System.Drawing.Point(230, 19);
+            this.btnNew.Location = new System.Drawing.Point(189, 19);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(70, 40);
             this.btnNew.TabIndex = 9;
@@ -196,7 +197,7 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(306, 19);
+            this.btnEdit.Location = new System.Drawing.Point(263, 19);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(70, 40);
             this.btnEdit.TabIndex = 10;
@@ -208,7 +209,7 @@
             // 
             this.txtLookUP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLookUP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLookUP.Location = new System.Drawing.Point(381, 30);
+            this.txtLookUP.Location = new System.Drawing.Point(338, 30);
             this.txtLookUP.Name = "txtLookUP";
             this.txtLookUP.Size = new System.Drawing.Size(140, 29);
             this.txtLookUP.TabIndex = 11;
@@ -217,7 +218,7 @@
             // btnLookUp
             // 
             this.btnLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLookUp.Location = new System.Drawing.Point(527, 19);
+            this.btnLookUp.Location = new System.Drawing.Point(484, 19);
             this.btnLookUp.Name = "btnLookUp";
             this.btnLookUp.Size = new System.Drawing.Size(87, 40);
             this.btnLookUp.TabIndex = 12;
@@ -227,7 +228,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(620, 19);
+            this.btnRefresh.Location = new System.Drawing.Point(577, 19);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(99, 40);
             this.btnRefresh.TabIndex = 13;
@@ -236,6 +237,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.button1);
@@ -247,14 +249,14 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(0, 72);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(925, 65);
+            this.groupBox2.Size = new System.Drawing.Size(947, 65);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(725, 19);
+            this.button2.Location = new System.Drawing.Point(682, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 40);
             this.button2.TabIndex = 14;
@@ -269,7 +271,7 @@
             this.tspRate});
             this.statusStrip1.Location = new System.Drawing.Point(0, 451);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(925, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(947, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -324,18 +326,29 @@
             // groupBox4
             // 
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox4.Location = new System.Drawing.Point(492, 137);
+            this.groupBox4.Location = new System.Drawing.Point(514, 137);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(433, 314);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "EXPENSE";
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(787, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 40);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "PRINT";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 473);
+            this.ClientSize = new System.Drawing.Size(947, 473);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
@@ -385,5 +398,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tspRate;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -34,11 +34,9 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtTransName = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1.SuspendLayout();
@@ -51,11 +49,9 @@
             this.groupBox1.Controls.Add(this.btnNew);
             this.groupBox1.Controls.Add(this.txtAmount);
             this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.txtTransName);
             this.groupBox1.Controls.Add(this.txtDate);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -63,7 +59,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(480, 294);
+            this.groupBox1.Size = new System.Drawing.Size(433, 234);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -71,7 +67,7 @@
             // 
             this.btnCancel.Enabled = false;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(353, 220);
+            this.btnCancel.Location = new System.Drawing.Point(301, 116);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 45);
             this.btnCancel.TabIndex = 10;
@@ -83,17 +79,18 @@
             // 
             this.btnSave.Enabled = false;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(353, 169);
+            this.btnSave.Location = new System.Drawing.Point(301, 65);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 45);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnNew
             // 
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNew.Location = new System.Drawing.Point(353, 118);
+            this.btnNew.Location = new System.Drawing.Point(301, 12);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(120, 45);
             this.btnNew.TabIndex = 8;
@@ -104,7 +101,7 @@
             // txtAmount
             // 
             this.txtAmount.Enabled = false;
-            this.txtAmount.Location = new System.Drawing.Point(15, 236);
+            this.txtAmount.Location = new System.Drawing.Point(15, 180);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 25);
             this.txtAmount.TabIndex = 7;
@@ -115,20 +112,11 @@
             // 
             this.txtDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescription.Enabled = false;
-            this.txtDescription.Location = new System.Drawing.Point(15, 138);
+            this.txtDescription.Location = new System.Drawing.Point(15, 99);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(325, 74);
+            this.txtDescription.Size = new System.Drawing.Size(273, 52);
             this.txtDescription.TabIndex = 6;
-            // 
-            // txtTransName
-            // 
-            this.txtTransName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTransName.Enabled = false;
-            this.txtTransName.Location = new System.Drawing.Point(15, 90);
-            this.txtTransName.Name = "txtTransName";
-            this.txtTransName.Size = new System.Drawing.Size(325, 25);
-            this.txtTransName.TabIndex = 5;
             // 
             // txtDate
             // 
@@ -146,7 +134,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 215);
+            this.label4.Location = new System.Drawing.Point(12, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 3;
@@ -155,20 +143,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 118);
+            this.label3.Location = new System.Drawing.Point(12, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 17);
+            this.label3.Size = new System.Drawing.Size(83, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "DESCRIPTION:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ITEM NAME:";
+            this.label3.Text = "NARRATION";
             // 
             // label1
             // 
@@ -181,10 +160,10 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 272);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 212);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(480, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(433, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -193,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(480, 294);
+            this.ClientSize = new System.Drawing.Size(433, 234);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,11 +200,9 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtTransName;
         private System.Windows.Forms.DateTimePicker txtDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
     }
