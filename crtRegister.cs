@@ -16,14 +16,14 @@ namespace ADM_Management_System {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class crtRegister : ReportClass {
         
-        public CrystalReport1() {
+        public crtRegister() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "crtRegister.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ADM_Management_System {
         
         public override string FullResourceName {
             get {
-                return "ADM_Management_System.CrystalReport1.rpt";
+                return "ADM_Management_System.crtRegister.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ADM_Management_System {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedcrtRegister : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedcrtRegister() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ADM_Management_System {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            crtRegister rpt = new crtRegister();
             rpt.Site = this.Site;
             return rpt;
         }

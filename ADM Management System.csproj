@@ -62,10 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="crtRegister.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>crtRegister.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DBConnector.cs">
@@ -112,18 +112,26 @@
     <Compile Include="frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRPTregister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRPTregister.Designer.cs">
-      <DependentUpon>frmRPTregister.cs</DependentUpon>
-    </Compile>
     <Compile Include="myFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <Compile Include="RegisterDS.cs">
+      <DependentUpon>RegisterDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegisterDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterRPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterRPT.Designer.cs">
+      <DependentUpon>RegisterRPT.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="crtRegister.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>crtRegister.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DBConnector.resx">
       <DependentUpon>DBConnector.cs</DependentUpon>
@@ -146,9 +154,6 @@
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRPTregister.resx">
-      <DependentUpon>frmRPTregister.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -159,6 +164,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegisterRPT.resx">
+      <DependentUpon>RegisterRPT.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,6 +183,17 @@
   <ItemGroup>
     <Content Include="focus64_lnC_1.ico" />
     <Content Include="focus_icon.ico" />
+    <None Include="RegisterDS.xsc">
+      <DependentUpon>RegisterDS.xsd</DependentUpon>
+    </None>
+    <None Include="RegisterDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegisterDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RegisterDS.xss">
+      <DependentUpon>RegisterDS.xsd</DependentUpon>
+    </None>
     <None Include="Resources\background.png" />
     <None Include="Resources\edit.png" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿namespace ADM_Management_System
 {
-    partial class frmRPTregister
+    partial class RegisterRPT
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport11 = new ADM_Management_System.CrystalReport1();
+            this.crtRegister1 = new ADM_Management_System.crtRegister();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,20 +40,20 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReport11;
+            this.crystalReportViewer1.ReportSource = this.crtRegister1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // frmRPTregister
+            // RegisterRPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "frmRPTregister";
-            this.Text = "DELEGATES LIST";
+            this.Name = "RegisterRPT";
+            this.Text = "DELEGATE REGISTER";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmRPTregister_Load);
+            this.Load += new System.EventHandler(this.RegisterRPT_Load);
             this.ResumeLayout(false);
 
         }
@@ -61,6 +61,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReport1 CrystalReport11;
+        private crtRegister crtRegister1;
     }
 }

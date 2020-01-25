@@ -207,7 +207,10 @@ namespace ADM_Management_System
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            frmRPTregister rt = new frmRPTregister();
+            // frmRPTregister rt = new frmRPTregister();
+            //rt.ShowDialog();
+
+            RegisterRPT rt = new RegisterRPT();
             rt.ShowDialog();
         }
     }
