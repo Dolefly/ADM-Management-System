@@ -80,6 +80,7 @@ namespace ADM_Management_System
             frmLogin l = new frmLogin();
             l.ShowDialog();
             tspUser.Text = l.username;
+            tspUserID.Text = l.userID;
         }
 
         private void RateSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,5 +122,13 @@ namespace ADM_Management_System
             frmExpense x = new frmExpense();
             x.ShowDialog();
         }
-    }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            frmLogin l = new frmLogin();
+            l.ShowDialog();
+            tspUser.Text = l.username;
+            tspUserID.Text = l.userID;
+        }
+    } 
 }

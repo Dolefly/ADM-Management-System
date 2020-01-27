@@ -34,6 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.lblUserID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             this.btnCancel.Location = new System.Drawing.Point(150, 136);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 34);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.Button1_Click);
@@ -57,13 +58,14 @@
             this.btnEnter.Location = new System.Drawing.Point(36, 136);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(98, 34);
-            this.btnEnter.TabIndex = 1;
+            this.btnEnter.TabIndex = 0;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = true;
             this.btnEnter.Click += new System.EventHandler(this.Button2_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblUserID);
             this.groupBox1.Controls.Add(this.txtPass);
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.btnCancel);
@@ -107,6 +109,16 @@
             this.txtPass.TabIndex = 5;
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblUserID
+            // 
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.Location = new System.Drawing.Point(212, 38);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(38, 13);
+            this.lblUserID.TabIndex = 6;
+            this.lblUserID.Text = "userID";
+            this.lblUserID.Visible = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblUserID;
     }
 }

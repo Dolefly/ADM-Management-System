@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ADM_Management_System
 {
@@ -22,15 +16,50 @@ namespace ADM_Management_System
             Application.Exit();
         }
 
+        void LOGIN()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            var userName = txtUsername.Text;
+            var pass = txtPass.Text;
+            try
+            {
+                string sql = $"SELECT * FROM SystemUser WHERE Username='{userName}' AND Pass=MD5('{pass}')";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    //frmMain f = new frmMain();
+                    // f.tspUser.Text = "ADMIN";
+                    lblUserID.Text = dr.GetString("ID");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Username or Password", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPass.Clear();
+                    txtUsername.Clear();
+                    txtUsername.Focus();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         private void Button2_Click(object sender, EventArgs e)
         {
             if(txtUsername.Text != "")
             {
                 if(txtPass.Text != "")
                 {
-                    frmMain f = new frmMain();
-                    f.tspUser.Text = "ADMIN";
-                    this.Close();
+                    LOGIN();
                 }
                 else
                 {
@@ -64,7 +93,8 @@ namespace ADM_Management_System
         {
             
         }
-
+        //This funtion used to pass variable values to mdi parent form
         public string username { get { return txtUsername.Text; } }
+        public string userID { get { return lblUserID.Text; } }
     }
 }
