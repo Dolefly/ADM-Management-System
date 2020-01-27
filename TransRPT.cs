@@ -18,21 +18,34 @@ namespace ADM_Management_System
         }
         void GetReport()
         {
-            var sql = "SELECT (Attendance.Date) AS Date,CONCAT(Register.`Name`, ' _ ', '[', Attendance.Member_No, ']', ' _ ', School.`Name`) AS Narration,Attendance.Amount FROM Attendance INNER JOIN Register ON Attendance.Member_No = Register.TSC_No INNER JOIN School ON School.Tsc_No = Register.TSC_No UNION SELECT e.Date,e.Narration,e.Amount FROM Expense e ORDER BY Date ASC";
+            try
+            {
+                var sql = "SELECT DATE_FORMAT(Attendance.Date,GET_FORMAT(DATE,'EUR')) AS Date,CONCAT(Register.`Name`, ' _ ', '[', Attendance.Member_No, ']', ' _ ', School.`Name`) AS Narration,Attendance.Amount FROM Attendance INNER JOIN Register ON Attendance.Member_No = Register.TSC_No INNER JOIN School ON School.Tsc_No = Register.TSC_No UNION SELECT DATE_FORMAT(Expense.Date, GET_FORMAT(DATE,'EUR')) AS Date,Expense.Narration,Expense.Amount FROM Expense ORDER BY Date ASC";
 
-            conn.Open();
-            MySqlDataAdapter dscmd = new MySqlDataAdapter(sql, conn);
-            TransDS ds = new TransDS();
-            dscmd.Fill(ds, "Transaction");
+                conn.Open();
+                MySqlDataAdapter dscmd = new MySqlDataAdapter(sql, conn);
+                TransDS ds = new TransDS();
+                dscmd.Fill(ds, "Transaction");
 
-            // MessageBox.Show(ds.Tables[1].Rows.Count.ToString());
-            conn.Close();
+                // MessageBox.Show(ds.Tables[1].Rows.Count.ToString());
+                conn.Close();
 
 
-            crtTrans objRpt = new crtTrans();
-            objRpt.SetDataSource(ds.Tables[1]);
-            crystalReportViewer1.ReportSource = objRpt;
-            crystalReportViewer1.Refresh();
+                crtTrans objRpt = new crtTrans();
+                objRpt.SetDataSource(ds.Tables[1]);
+                crystalReportViewer1.ReportSource = objRpt;
+                crystalReportViewer1.Refresh();
+
+                ds.Dispose();
+            }
+            catch(Exception ex)
+            {
+              //  MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

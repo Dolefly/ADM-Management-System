@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows.Forms;
+using Microsoft.Win32;
 using MySql.Data.MySqlClient;
 
 namespace ADM_Management_System
@@ -39,6 +41,28 @@ namespace ADM_Management_System
             return returnValue;
 
         }
+        public static string GetRegistrySettings() {
+            //opening the subkey  
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\amsSettings");
+            return key.ToString();
+        }
+        public static bool IsServerConnected()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
 
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    return true;
+                }
+                catch(Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
+      
     }
 }

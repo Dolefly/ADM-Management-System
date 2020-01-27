@@ -76,7 +76,10 @@ namespace ADM_Management_System
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            this.Text = "AMS SYSTEM Version " + Application.ProductVersion; 
+            this.Text = "AMS SYSTEM Version " + Application.ProductVersion;
+            frmLogin l = new frmLogin();
+            l.ShowDialog();
+            tspUser.Text = l.username;
         }
 
         private void RateSettingsToolStripMenuItem_Click(object sender, EventArgs e)

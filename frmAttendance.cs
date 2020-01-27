@@ -15,7 +15,8 @@ namespace ADM_Management_System
         private void frmAttendance_Load(object sender, EventArgs e)
         {
             txtFind.Focus();
-            ATTENDANCE();
+            GetAttendance();
+            getExpenses();
 
             tspRate.Text = GetRate();
         }
@@ -144,7 +145,7 @@ namespace ADM_Management_System
                 conn.Close();
             }
         }//Mark delegate as present
-        void ATTENDANCE()
+        void GetAttendance()
         {
             try
             {
@@ -157,13 +158,52 @@ namespace ADM_Management_System
 
                 while (dr.Read())
                 {
-                    var lst = lvAttendance.Items.Add(dr.GetString("Date"));
+                    var lst = lvAttendance.Items.Add(dr.GetDateTime("Date").ToString("dd/MM/yyyy"));
                     lst.SubItems.Add(dr.GetString("Description"));
-                   // lst.SubItems.Add(dr.GetString("Amount"));
+                    //lst.SubItems.Add(dr.GetString("Amount"));
+                }
+                dr.Dispose();
+
+                var sql2 = "SELECT COUNT(*) AS Delegates FROM Attendance";
+                var cmd2 = new MySqlCommand(sql2, conn);
+                var dr2 = cmd2.ExecuteReader();
+
+                while (dr2.Read())
+                {
+                    tspDelegates.Text = dr2.GetString("Delegates");
                 }
 
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        void getExpenses()
+        {
+            try
+            {
+                var sql = "SELECT Expense.Date,Expense.Narration,Expense.Amount FROM Expense ORDER BY Expense.Date ASC";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                lvExpense.Items.Clear();
+
+                while (dr.Read())
+                {
+                    var lst = lvExpense.Items.Add(dr.GetDateTime("Date").ToString("dd/MM/yyyy"));
+                    lst.SubItems.Add(dr.GetString("Narration"));
+                    lst.SubItems.Add(dr.GetString("Amount"));
+                }
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -246,7 +286,7 @@ namespace ADM_Management_System
                     if(lblName.Text != "")
                     {
                         INSERT_ATTENDANCE();
-                        ATTENDANCE();
+                        GetAttendance();
                     }
                     else
                     {
@@ -291,6 +331,17 @@ namespace ADM_Management_System
         {
             TransRPT tr = new TransRPT();
             tr.ShowDialog();
+        }
+
+        private void LvAttendance_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            GetAttendance();
+            getExpenses();
         }
     }
 }
