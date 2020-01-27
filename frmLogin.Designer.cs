@@ -46,7 +46,7 @@
             this.btnCancel.Location = new System.Drawing.Point(150, 136);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 34);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.Button1_Click);
@@ -58,7 +58,7 @@
             this.btnEnter.Location = new System.Drawing.Point(36, 136);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(98, 34);
-            this.btnEnter.TabIndex = 0;
+            this.btnEnter.TabIndex = 2;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = true;
             this.btnEnter.Click += new System.EventHandler(this.Button2_Click);
@@ -96,8 +96,9 @@
             this.txtUsername.Location = new System.Drawing.Point(36, 76);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(212, 24);
-            this.txtUsername.TabIndex = 4;
+            this.txtUsername.TabIndex = 0;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtUsername_KeyDown);
             // 
             // txtPass
             // 
@@ -106,8 +107,9 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(212, 24);
-            this.txtPass.TabIndex = 5;
+            this.txtPass.TabIndex = 1;
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPass_KeyDown);
             // 
             // lblUserID
             // 
@@ -149,7 +151,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblUserID;
+        public System.Windows.Forms.TextBox txtUsername;
     }
 }

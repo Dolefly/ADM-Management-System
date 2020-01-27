@@ -130,5 +130,11 @@ namespace ADM_Management_System
             tspUser.Text = l.username;
             tspUserID.Text = l.userID;
         }
+
+        private void UsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUser ur = new frmUser();
+            ur.ShowDialog();
+        }
     } 
 }

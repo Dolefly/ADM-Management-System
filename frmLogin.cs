@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Renci.SshNet.Security;
 
 namespace ADM_Management_System
 {
@@ -96,5 +97,21 @@ namespace ADM_Management_System
         //This funtion used to pass variable values to mdi parent form
         public string username { get { return txtUsername.Text; } }
         public string userID { get { return lblUserID.Text; } }
+
+        private void TxtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btnEnter.PerformClick();
+            }
+        }
+
+        private void TxtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btnEnter.PerformClick();
+            }
+        }
     }
 }
