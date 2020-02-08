@@ -50,6 +50,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tspRate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tspDelegates = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lvAttendance = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,10 +61,8 @@
             this.lvExpense = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tspDelegates = new System.Windows.Forms.ToolStripStatusLabel();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -183,7 +184,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(157, 19);
+            this.button1.Location = new System.Drawing.Point(6, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 40);
             this.button1.TabIndex = 8;
@@ -194,7 +195,7 @@
             // btnNew
             // 
             this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNew.Location = new System.Drawing.Point(299, 19);
+            this.btnNew.Location = new System.Drawing.Point(149, 19);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(70, 40);
             this.btnNew.TabIndex = 9;
@@ -205,7 +206,7 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(373, 19);
+            this.btnEdit.Location = new System.Drawing.Point(225, 19);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(70, 40);
             this.btnEdit.TabIndex = 10;
@@ -232,6 +233,7 @@
             this.btnLookUp.TabIndex = 12;
             this.btnLookUp.Text = "LOOK UP";
             this.btnLookUp.UseVisualStyleBackColor = true;
+            this.btnLookUp.Click += new System.EventHandler(this.BtnLookUp_Click);
             // 
             // btnRefresh
             // 
@@ -246,6 +248,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbType);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.btnRefresh);
@@ -309,6 +312,24 @@
             this.tspRate.Name = "tspRate";
             this.tspRate.Size = new System.Drawing.Size(13, 17);
             this.tspRate.Text = "0";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel2.Text = "|";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(154, 17);
+            this.toolStripStatusLabel3.Text = "Delegate(s) marked present:";
+            // 
+            // tspDelegates
+            // 
+            this.tspDelegates.Name = "tspDelegates";
+            this.tspDelegates.Size = new System.Drawing.Size(13, 17);
+            this.tspDelegates.Text = "0";
             // 
             // groupBox3
             // 
@@ -384,29 +405,25 @@
             this.columnHeader2.Text = "Description";
             this.columnHeader2.Width = 350;
             // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel2.Text = "|";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(154, 17);
-            this.toolStripStatusLabel3.Text = "Delegate(s) marked present:";
-            // 
-            // tspDelegates
-            // 
-            this.tspDelegates.Name = "tspDelegates";
-            this.tspDelegates.Size = new System.Drawing.Size(13, 17);
-            this.tspDelegates.Text = "0";
-            // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Amount";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader3.Width = 100;
+            // 
+            // cmbType
+            // 
+            this.cmbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "DELEGATE",
+            "TRANSACTION"});
+            this.cmbType.Location = new System.Drawing.Point(301, 30);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(141, 28);
+            this.cmbType.TabIndex = 16;
             // 
             // frmAttendance
             // 
@@ -471,5 +488,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel tspDelegates;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ComboBox cmbType;
     }
 }

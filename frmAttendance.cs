@@ -183,6 +183,80 @@ namespace ADM_Management_System
                 conn.Close();
             }
         }
+        void Find_Attendance()
+        {
+            var tsc = txtLookUP.Text;
+            try
+            {
+                var sql = $"SELECT (Attendance.Date) AS Date,CONCAT(Register.`Name`, ' _ ', '[', Attendance.Member_No, ']', ' _ ', School.`Name`) AS Description,Attendance.Amount FROM Attendance INNER JOIN Register ON Attendance.Member_No = Register.TSC_No INNER JOIN School ON School.Tsc_No = Register.TSC_No WHERE Attendance.Member_No='{tsc}' ORDER BY Attendance.Date ASC";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                lvAttendance.Items.Clear();
+
+                if (dr.Read())
+                {
+                    var lst = lvAttendance.Items.Add(dr.GetDateTime("Date").ToString("dd/MM/yyyy"));
+                    lst.SubItems.Add(dr.GetString("Description"));
+                    //lst.SubItems.Add(dr.GetString("Amount"));
+                }
+                else
+                {
+                    MessageBox.Show("No records found for Member No:"+ tsc + " , Check and try again!","Confirmation",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+                dr.Dispose();
+
+                var sql2 = "SELECT COUNT(*) AS Delegates FROM Attendance";
+                var cmd2 = new MySqlCommand(sql2, conn);
+                var dr2 = cmd2.ExecuteReader();
+
+                while (dr2.Read())
+                {
+                    tspDelegates.Text = dr2.GetString("Delegates");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        void FindExpenses()
+        {
+            var amount = txtLookUP.Text;
+            try
+            {
+                var sql = $"SELECT Expense.Date,Expense.Narration,Expense.Amount FROM Expense WHERE Expense.Amount ='{amount}'";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                lvExpense.Items.Clear();
+
+                while(dr.Read())
+                {
+                    var lst = lvExpense.Items.Add(dr.GetDateTime("Date").ToString("dd/MM/yyyy"));
+                    lst.SubItems.Add(dr.GetString("Narration"));
+                    lst.SubItems.Add(dr.GetString("Amount"));
+                }
+               
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         void getExpenses()
         {
@@ -342,6 +416,29 @@ namespace ADM_Management_System
         {
             GetAttendance();
             getExpenses();
+        }
+
+        private void BtnLookUp_Click(object sender, EventArgs e)
+        {
+            if (txtLookUP.Text != "")
+            {
+                if (cmbType.Text == "")
+                {
+                    MessageBox.Show("Select filter type first!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (cmbType.Text == "DELEGATE")
+                {
+                    Find_Attendance();
+                }
+                else if (cmbType.Text == "TRANSACTION")
+                {
+                    FindExpenses();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter value to find", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
