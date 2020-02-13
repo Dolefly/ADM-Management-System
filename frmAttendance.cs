@@ -409,7 +409,15 @@ namespace ADM_Management_System
 
         private void LvAttendance_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(lvAttendance.SelectedItems.Count > 0)
+            {
+                btnUnMark.Enabled = true;
+            }
+            else
+            {
+                btnUnMark.Enabled = false;
+            }
+          
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -444,7 +452,9 @@ namespace ADM_Management_System
         private void BtnUnMark_Click(object sender, EventArgs e)
         {
             frmUNMARK un = new frmUNMARK();
+            btnUnMark.Enabled = false;
             un.ShowDialog();
+            
         }
     }
 }

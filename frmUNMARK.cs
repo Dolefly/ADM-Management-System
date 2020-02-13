@@ -43,7 +43,7 @@ namespace ADM_Management_System
                 var cmd2 = new MySqlCommand(sql2, conn);
                 var dr2 = cmd2.ExecuteNonQuery();
 
-                MessageBox.Show(mName + " has been deleted!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(mName + " has been removed.Remember to CLICK REFRESH on the next window!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -59,14 +59,28 @@ namespace ADM_Management_System
         private void Button1_Click(object sender, EventArgs e)
         {
             var attNo = myFunctions.GetMemberNo(txtMemberNo.Text);
+            var mName = myFunctions.GetDelegateName(attNo);
+            if (txtMemberNo.Text != "")
+            {
+                if (txtMemberNo.Text == attNo)
+                {
+                    DialogResult rs = MessageBox.Show("Are you sure you want to remove "+ mName + " from Attendance Register?","Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    if (rs == DialogResult.Yes)
+                    {
+                        UnMark();
+                        this.Close();
+                    }
+                    else if(rs == DialogResult.No)
+                    {
 
-            if (txtMemberNo.Text == attNo)
-            {
-                UnMark();
-            }
-            else
-            {
-                MessageBox.Show("No record exist!");
+                    }
+
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Provided Delegate Number does not exist on already Present Members!","Message",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             }
         }
     }

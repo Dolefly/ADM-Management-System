@@ -35,16 +35,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.txtLookUP = new System.Windows.Forms.TextBox();
             this.btnLookUp = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUnMark = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -63,8 +65,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnUnMark = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -155,6 +155,26 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "NAME:";
             // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(12, 22);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(70, 43);
+            this.btnNew.TabIndex = 9;
+            this.btnNew.Text = "NEW";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(88, 22);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(70, 43);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -187,31 +207,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(12, 22);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(70, 43);
-            this.btnNew.TabIndex = 9;
-            this.btnNew.Text = "NEW";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(88, 22);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(70, 43);
-            this.btnEdit.TabIndex = 10;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // txtLookUP
             // 
             this.txtLookUP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLookUP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLookUP.Location = new System.Drawing.Point(567, 30);
+            this.txtLookUP.Location = new System.Drawing.Point(672, 30);
             this.txtLookUP.Name = "txtLookUP";
             this.txtLookUP.Size = new System.Drawing.Size(140, 29);
             this.txtLookUP.TabIndex = 11;
@@ -220,7 +220,7 @@
             // btnLookUp
             // 
             this.btnLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLookUp.Location = new System.Drawing.Point(713, 30);
+            this.btnLookUp.Location = new System.Drawing.Point(818, 30);
             this.btnLookUp.Name = "btnLookUp";
             this.btnLookUp.Size = new System.Drawing.Size(26, 29);
             this.btnLookUp.TabIndex = 12;
@@ -230,10 +230,9 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(745, 30);
+            this.btnRefresh.Location = new System.Drawing.Point(292, 19);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(99, 29);
+            this.btnRefresh.Size = new System.Drawing.Size(137, 40);
             this.btnRefresh.TabIndex = 13;
             this.btnRefresh.Text = "REFRESH";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -258,6 +257,28 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // btnUnMark
+            // 
+            this.btnUnMark.Enabled = false;
+            this.btnUnMark.ForeColor = System.Drawing.Color.Red;
+            this.btnUnMark.Location = new System.Drawing.Point(149, 19);
+            this.btnUnMark.Name = "btnUnMark";
+            this.btnUnMark.Size = new System.Drawing.Size(137, 40);
+            this.btnUnMark.TabIndex = 18;
+            this.btnUnMark.Text = "UNMARK";
+            this.btnUnMark.UseVisualStyleBackColor = true;
+            this.btnUnMark.Click += new System.EventHandler(this.BtnUnMark_Click);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(428, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 17);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "FILTER BY:";
+            // 
             // cmbType
             // 
             this.cmbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -267,7 +288,7 @@
             this.cmbType.Items.AddRange(new object[] {
             "DELEGATE",
             "TRANSACTION"});
-            this.cmbType.Location = new System.Drawing.Point(420, 30);
+            this.cmbType.Location = new System.Drawing.Point(525, 31);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(141, 28);
             this.cmbType.TabIndex = 16;
@@ -417,27 +438,6 @@
             this.columnHeader3.Text = "Amount";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader3.Width = 100;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(326, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "FILTER BY:";
-            // 
-            // btnUnMark
-            // 
-            this.btnUnMark.ForeColor = System.Drawing.Color.Red;
-            this.btnUnMark.Location = new System.Drawing.Point(149, 19);
-            this.btnUnMark.Name = "btnUnMark";
-            this.btnUnMark.Size = new System.Drawing.Size(137, 40);
-            this.btnUnMark.TabIndex = 18;
-            this.btnUnMark.Text = "UNMARK";
-            this.btnUnMark.UseVisualStyleBackColor = true;
-            this.btnUnMark.Click += new System.EventHandler(this.BtnUnMark_Click);
             // 
             // frmAttendance
             // 
