@@ -440,5 +440,11 @@ namespace ADM_Management_System
                 MessageBox.Show("Enter value to find", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void BtnUnMark_Click(object sender, EventArgs e)
+        {
+            frmUNMARK un = new frmUNMARK();
+            un.ShowDialog();
+        }
     }
 }

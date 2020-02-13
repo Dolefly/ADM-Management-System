@@ -77,21 +77,24 @@ namespace ADM_Management_System
         }
         void DELETE()
         {
+            var tsc = lvDelegates.SelectedItems[0].Text;
+            var dName = myFunctions.GetDelegateName(tsc);
             try
             {
-                var tsc = lvDelegates.SelectedItems[0].Text;
+               
                 var sql = $"DELETE FROM Register WHERE TSC_No='{tsc}'";
+               
                 conn.Open();
                 var cmd = new MySqlCommand(sql,conn);
 
                 var dr = cmd.ExecuteNonQuery();
 
-                MessageBox.Show(tsc + " removed successfuly");
+                MessageBox.Show(dName + " removed successfuly");
                 MASTER_REGISTER();
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Sorry, "+ dName + " cannot be removed because the Delegate has been marked as present!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             finally
             {
@@ -125,7 +128,8 @@ namespace ADM_Management_System
             else
             {
                 var TSC = lvDelegates.SelectedItems[0].Text;
-                DialogResult rs = MessageBox.Show("Are you sure you want to remove TSC Number:" + TSC + " from Delegate Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                var dName = myFunctions.GetDelegateName(TSC);
+                DialogResult rs = MessageBox.Show("Are you sure you want to remove " + dName + " from Delegate Register?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (rs == DialogResult.Yes)
                 {

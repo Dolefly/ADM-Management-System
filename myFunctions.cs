@@ -63,7 +63,74 @@ namespace ADM_Management_System
                 }
             }
         }
-        
+
+        public static string GetDelegateName(string tscNo)
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            string returnValue = null;
+            try
+            {
+                var sql = $"SELECT Name FROM Register WHERE TSC_No='{tscNo}'";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    returnValue = dr.GetString("Name");
+                    dr.Dispose();
+
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return returnValue;
+        }
+
+        public static string GetMemberNo(string tscNo)
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            string returnValue = null;
+            try
+            {
+                var sql = $"SELECT * FROM Attendance WHERE Member_No='{tscNo}'";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    returnValue = dr.GetString("member_No");
+                    dr.Dispose();
+
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return returnValue;
+        }
 
     }
 }
