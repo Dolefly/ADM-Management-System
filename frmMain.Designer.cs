@@ -32,8 +32,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dBSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rateSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dBManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -48,7 +50,6 @@
             this.btnAttendance = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,7 +60,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.usersToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -77,26 +77,42 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dBSettingsToolStripMenuItem,
-            this.rateSettingsToolStripMenuItem});
+            this.rolesToolStripMenuItem1,
+            this.dBManagerToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.editToolStripMenuItem.Text = "Settings";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
-            // dBSettingsToolStripMenuItem
+            // rolesToolStripMenuItem1
             // 
-            this.dBSettingsToolStripMenuItem.Name = "dBSettingsToolStripMenuItem";
-            this.dBSettingsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.dBSettingsToolStripMenuItem.Text = "DB Settings";
-            this.dBSettingsToolStripMenuItem.Click += new System.EventHandler(this.DBSettingsToolStripMenuItem_Click);
+            this.rolesToolStripMenuItem1.Name = "rolesToolStripMenuItem1";
+            this.rolesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.rolesToolStripMenuItem1.Text = "User Manager";
+            this.rolesToolStripMenuItem1.Click += new System.EventHandler(this.RolesToolStripMenuItem1_Click);
             // 
-            // rateSettingsToolStripMenuItem
+            // dBManagerToolStripMenuItem
             // 
-            this.rateSettingsToolStripMenuItem.Name = "rateSettingsToolStripMenuItem";
-            this.rateSettingsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.rateSettingsToolStripMenuItem.Text = "Rate Settings";
-            this.rateSettingsToolStripMenuItem.Click += new System.EventHandler(this.RateSettingsToolStripMenuItem_Click);
+            this.dBManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connectivityToolStripMenuItem,
+            this.rateToolStripMenuItem});
+            this.dBManagerToolStripMenuItem.Name = "dBManagerToolStripMenuItem";
+            this.dBManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dBManagerToolStripMenuItem.Text = "DB Manager";
+            // 
+            // connectivityToolStripMenuItem
+            // 
+            this.connectivityToolStripMenuItem.Name = "connectivityToolStripMenuItem";
+            this.connectivityToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.connectivityToolStripMenuItem.Text = "Connectivity";
+            this.connectivityToolStripMenuItem.Click += new System.EventHandler(this.ConnectivityToolStripMenuItem_Click);
+            // 
+            // rateToolStripMenuItem
+            // 
+            this.rateToolStripMenuItem.Name = "rateToolStripMenuItem";
+            this.rateToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.rateToolStripMenuItem.Text = "Rate";
+            this.rateToolStripMenuItem.Click += new System.EventHandler(this.RateToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -191,6 +207,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "REPORTS";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -245,13 +262,6 @@
             this.pnMain.Size = new System.Drawing.Size(917, 539);
             this.pnMain.TabIndex = 4;
             // 
-            // usersToolStripMenuItem
-            // 
-            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.usersToolStripMenuItem.Text = "Users";
-            this.usersToolStripMenuItem.Click += new System.EventHandler(this.UsersToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,8 +303,6 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dBSettingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rateSettingsToolStripMenuItem;
         public System.Windows.Forms.Button btnAttendance;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button button2;
@@ -303,7 +311,10 @@
         private System.Windows.Forms.ToolStripStatusLabel tspUserID;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         public System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dBManagerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectivityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rateToolStripMenuItem;
     }
 }
 

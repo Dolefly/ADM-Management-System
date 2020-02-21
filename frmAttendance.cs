@@ -17,8 +17,24 @@ namespace ADM_Management_System
             txtFind.Focus();
             GetAttendance();
             getExpenses();
+            var myRate = GetRate();
+            if (myRate != "")
+            {
+                tspRate.Text = GetRate();
+            }
+            else
+            {
+                DialogResult rs = MessageBox.Show("It seems payment Rate has not been set, Click YES to set now or Click NO to set later!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if(rs == DialogResult.Yes)
+                {
+                    frmRate fr = new frmRate();
+                    fr.ShowDialog();
+                }
+                    else if (rs == DialogResult.No)
+                {
 
-            tspRate.Text = GetRate();
+                }
+            }
         }
         void FIND_MEMBER()
         {

@@ -129,6 +129,12 @@
     <Compile Include="frmRate.Designer.cs">
       <DependentUpon>frmRate.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRBAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRBAC.Designer.cs">
+      <DependentUpon>frmRBAC.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,7 @@
     <Compile Include="myFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RBACUser.cs" />
     <Compile Include="RegisterDS.cs">
       <DependentUpon>RegisterDS.xsd</DependentUpon>
     </Compile>
@@ -212,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRate.resx">
       <DependentUpon>frmRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRBAC.resx">
+      <DependentUpon>frmRBAC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>

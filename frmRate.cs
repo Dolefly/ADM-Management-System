@@ -15,6 +15,7 @@ namespace ADM_Management_System
         {
 
            this.Text="Current Rate: " + myFunctions.GetRate();
+            txtYear.Text = DateTime.Now.ToString("yyyy");
         }
         void SAVE()
         {
@@ -45,8 +46,16 @@ namespace ADM_Management_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SAVE();
-            this.Text="Current Rate: " + myFunctions.GetRate();
+            if(txtAmount.Text != "")
+            {
+                SAVE();
+                this.Text = "Current Rate: " + myFunctions.GetRate();
+            }
+            else
+            {
+                MessageBox.Show("Enter Amount!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+          
         }
 
         private void TxtYear_KeyPress(object sender, KeyPressEventArgs e)

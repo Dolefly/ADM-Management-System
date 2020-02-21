@@ -13,7 +13,8 @@ namespace ADM_Management_System
             string returnValue = null;
             try
             {
-                var sql = "SELECT Amount FROM Rate WHERE Year='2020'";
+                var year = DateTime.Now.ToString("yyyy");
+                var sql = $"SELECT Amount FROM Rate WHERE Year='{year}'";
                 conn.Open();
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteReader();
@@ -26,6 +27,7 @@ namespace ADM_Management_System
                 }
                 else
                 {
+                  
                     return "";
                 }
             }
@@ -112,6 +114,40 @@ namespace ADM_Management_System
                 if (dr.Read())
                 {
                     returnValue = dr.GetString("member_No");
+                    dr.Dispose();
+
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return returnValue;
+        }
+
+        public static string GetRBAC(string Uname, int resourceID)
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            string returnValue = null;
+            try
+            {
+                var sql = $"SELECT users.user_name,resource.resource_name FROM users INNER JOIN users_role ON users_role.user_id = users.id INNER JOIN role ON users_role.role_id = role.id INNER JOIN resource_role ON resource_role.role_id = role.id INNER JOIN resource ON resource_role.resource_id = resource.id WHERE users.user_name = '{Uname}' AND resource.id = '{resourceID}'"; 
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    returnValue = dr.GetString("user_name");
                     dr.Dispose();
 
                 }

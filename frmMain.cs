@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ADM_Management_System
 {
@@ -70,10 +64,10 @@ namespace ADM_Management_System
 
         private void DBSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DBConnector db = new DBConnector();
-            db.ShowDialog();
+           
         }
-
+        //Code to pass Username to Child form
+       // public string Uname { get { return tspUser.Text; } }
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.Text = "AMS SYSTEM Version " + Application.ProductVersion;
@@ -81,12 +75,12 @@ namespace ADM_Management_System
             l.ShowDialog();
             tspUser.Text = l.username;
             tspUserID.Text = l.userID;
+            
         }
 
         private void RateSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRate r = new frmRate();
-            r.ShowDialog();
+            
         }
 
         private void btnAttendance_Click(object sender, EventArgs e)
@@ -135,6 +129,87 @@ namespace ADM_Management_System
         {
             frmUser ur = new frmUser();
             ur.ShowDialog();
+        }
+
+        private void RolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RolesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var uName = tspUser.Text;
+            var rID = 1;
+
+            var uRole = myFunctions.GetRBAC(uName, rID);
+            
+            if(uRole != "")
+            {
+                frmRBAC rb = new frmRBAC();
+                rb.Text = tspUser.Text;
+                rb.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You dont have privileges to access this module!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+            
+        }
+
+        private void ConnectivityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var uName = tspUser.Text;
+            var rID = 1;
+
+            var uRole = myFunctions.GetRBAC(uName, rID);
+
+            if (uRole != "")
+            {
+                DBConnector db = new DBConnector();
+                db.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You dont have privileges to access this module!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+          
+        }
+
+        private void RateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var uName = tspUser.Text;
+            var rID = 1;
+
+            var uRole = myFunctions.GetRBAC(uName, rID);
+
+            if (uRole != "")
+            {
+                frmRate rt = new frmRate();
+                rt.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You dont have privileges to access this module!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            var uName = tspUser.Text;
+            var rID = 2;
+
+            var uRole = myFunctions.GetRBAC(uName, rID);
+
+            if (uRole != "")
+            {
+                MessageBox.Show("Reports can be seen");
+            }
+            else
+            {
+                MessageBox.Show("You dont have privileges to access this module!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
     } 
 }
