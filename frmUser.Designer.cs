@@ -35,6 +35,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblUserID = new System.Windows.Forms.Label();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -54,7 +55,9 @@
             this.lvUsers = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblUserID = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.lblRoleID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -63,23 +66,23 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnPrint);
-            this.groupBox1.Controls.Add(this.btnDelete);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnNew);
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.btnEdit);
+            this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 303);
+            this.groupBox1.Location = new System.Drawing.Point(0, 338);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(412, 52);
+            this.groupBox1.Size = new System.Drawing.Size(420, 52);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // btnPrint
             // 
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrint.Location = new System.Drawing.Point(332, 14);
+            this.btnPrint.Location = new System.Drawing.Point(344, 11);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 35);
+            this.btnPrint.Size = new System.Drawing.Size(70, 35);
             this.btnPrint.TabIndex = 4;
             this.btnPrint.Text = "PRINT";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -87,9 +90,9 @@
             // btnDelete
             // 
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Location = new System.Drawing.Point(251, 14);
+            this.btnDelete.Location = new System.Drawing.Point(268, 11);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 35);
+            this.btnDelete.Size = new System.Drawing.Size(70, 35);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -97,19 +100,20 @@
             // btnSave
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Location = new System.Drawing.Point(170, 14);
+            this.btnSave.Location = new System.Drawing.Point(192, 11);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 35);
+            this.btnSave.Size = new System.Drawing.Size(70, 35);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEdit.Location = new System.Drawing.Point(89, 14);
+            this.btnEdit.Location = new System.Drawing.Point(116, 11);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 35);
+            this.btnEdit.Size = new System.Drawing.Size(70, 35);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -117,20 +121,24 @@
             // btnNew
             // 
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNew.Location = new System.Drawing.Point(8, 14);
+            this.btnNew.Location = new System.Drawing.Point(40, 11);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 35);
+            this.btnNew.Size = new System.Drawing.Size(70, 35);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "NEW";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblUserID);
+            this.groupBox2.Controls.Add(this.lblRoleID);
             this.groupBox2.Controls.Add(this.txtConfirmPass);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.cmbRole);
             this.groupBox2.Controls.Add(this.txtPass);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtUsername);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtPhone);
@@ -141,12 +149,20 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtFirstName);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Location = new System.Drawing.Point(183, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 303);
+            this.groupBox2.Size = new System.Drawing.Size(229, 343);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // lblUserID
+            // 
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.Location = new System.Drawing.Point(106, 16);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(40, 13);
+            this.lblUserID.TabIndex = 14;
+            this.lblUserID.Text = "UserID";
             // 
             // txtConfirmPass
             // 
@@ -274,7 +290,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(181, 303);
+            this.groupBox3.Size = new System.Drawing.Size(181, 338);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -282,7 +298,7 @@
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(3, 265);
+            this.button1.Location = new System.Drawing.Point(3, 300);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 35);
             this.button1.TabIndex = 2;
@@ -303,7 +319,7 @@
             this.lvUsers.Location = new System.Drawing.Point(3, 12);
             this.lvUsers.MultiSelect = false;
             this.lvUsers.Name = "lvUsers";
-            this.lvUsers.Size = new System.Drawing.Size(172, 247);
+            this.lvUsers.Size = new System.Drawing.Size(172, 283);
             this.lvUsers.TabIndex = 0;
             this.lvUsers.UseCompatibleStateImageBehavior = false;
             this.lvUsers.View = System.Windows.Forms.View.Details;
@@ -319,21 +335,38 @@
             this.columnHeader2.Text = "NAME";
             this.columnHeader2.Width = 140;
             // 
-            // lblUserID
+            // label8
             // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Location = new System.Drawing.Point(106, 16);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(40, 13);
-            this.lblUserID.TabIndex = 14;
-            this.lblUserID.Text = "UserID";
-            this.lblUserID.Visible = false;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 298);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Role";
+            // 
+            // cmbRole
+            // 
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Location = new System.Drawing.Point(12, 314);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(209, 21);
+            this.cmbRole.TabIndex = 1;
+            this.cmbRole.SelectedIndexChanged += new System.EventHandler(this.cmbRole_SelectedIndexChanged);
+            // 
+            // lblRoleID
+            // 
+            this.lblRoleID.AutoSize = true;
+            this.lblRoleID.Location = new System.Drawing.Point(166, 16);
+            this.lblRoleID.Name = "lblRoleID";
+            this.lblRoleID.Size = new System.Drawing.Size(41, 13);
+            this.lblRoleID.TabIndex = 2;
+            this.lblRoleID.Text = "(roleID)";
             // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 355);
+            this.ClientSize = new System.Drawing.Size(420, 390);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -381,5 +414,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.Label lblRoleID;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.Label label8;
     }
 }

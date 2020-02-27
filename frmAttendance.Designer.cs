@@ -85,7 +85,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtFind);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1057, 72);
@@ -157,6 +159,7 @@
             // 
             // btnNew
             // 
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Location = new System.Drawing.Point(12, 22);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(70, 43);
@@ -167,6 +170,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Location = new System.Drawing.Point(88, 22);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(70, 43);
@@ -198,10 +202,11 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Blue;
             this.button1.Location = new System.Drawing.Point(6, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 40);
+            this.button1.Size = new System.Drawing.Size(152, 40);
             this.button1.TabIndex = 8;
             this.button1.Text = "MARK PRESENT";
             this.button1.UseVisualStyleBackColor = true;
@@ -220,6 +225,7 @@
             // btnLookUp
             // 
             this.btnLookUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLookUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLookUp.Location = new System.Drawing.Point(818, 30);
             this.btnLookUp.Name = "btnLookUp";
             this.btnLookUp.Size = new System.Drawing.Size(26, 29);
@@ -230,9 +236,10 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Location = new System.Drawing.Point(292, 19);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(137, 40);
+            this.btnRefresh.Size = new System.Drawing.Size(119, 40);
             this.btnRefresh.TabIndex = 13;
             this.btnRefresh.Text = "REFRESH";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -260,10 +267,11 @@
             // btnUnMark
             // 
             this.btnUnMark.Enabled = false;
+            this.btnUnMark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnMark.ForeColor = System.Drawing.Color.Red;
-            this.btnUnMark.Location = new System.Drawing.Point(149, 19);
+            this.btnUnMark.Location = new System.Drawing.Point(167, 19);
             this.btnUnMark.Name = "btnUnMark";
-            this.btnUnMark.Size = new System.Drawing.Size(137, 40);
+            this.btnUnMark.Size = new System.Drawing.Size(119, 40);
             this.btnUnMark.TabIndex = 18;
             this.btnUnMark.Text = "UNMARK";
             this.btnUnMark.UseVisualStyleBackColor = true;
@@ -283,6 +291,7 @@
             // 
             this.cmbType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbType.FormattingEnabled = true;
             this.cmbType.Items.AddRange(new object[] {
@@ -296,6 +305,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(955, 30);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(99, 29);
@@ -307,6 +317,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(850, 30);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 29);
@@ -361,11 +372,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.lvAttendance);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 137);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(461, 359);
+            this.groupBox3.Size = new System.Drawing.Size(1057, 359);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DELEGATE PRESENT LIST";
@@ -380,7 +392,7 @@
             this.lvAttendance.HideSelection = false;
             this.lvAttendance.Location = new System.Drawing.Point(3, 16);
             this.lvAttendance.Name = "lvAttendance";
-            this.lvAttendance.Size = new System.Drawing.Size(455, 340);
+            this.lvAttendance.Size = new System.Drawing.Size(1051, 340);
             this.lvAttendance.TabIndex = 0;
             this.lvAttendance.UseCompatibleStateImageBehavior = false;
             this.lvAttendance.View = System.Windows.Forms.View.Details;
@@ -443,15 +455,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1057, 518);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAttendance";
-            this.Text = "ATTENDANCE REGISTER";
+            this.Text = "POS MODULE";
             this.Load += new System.EventHandler(this.frmAttendance_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

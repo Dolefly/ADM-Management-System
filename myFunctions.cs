@@ -168,5 +168,43 @@ namespace ADM_Management_System
             return returnValue;
         }
 
+        //SELECT Table_Schema,Table_Name,Auto_Increment FROM information_schema.`TABLES` WHERE TABLE_SCHEMA = "adm" AND TABLE_NAME="SystemUser";
+        public static string GetNextUserID()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            string returnValue = null;
+            try
+            {
+                var adm = "adm";
+                // var year = DateTime.Now.ToString("yyyy");
+                var sql = $"SELECT Table_Schema,Table_Name,Auto_Increment FROM information_schema.`TABLES` WHERE TABLE_SCHEMA = '{adm}' AND TABLE_NAME='SystemUser'";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    returnValue = dr.GetString("Auto_Increment");
+                    dr.Dispose();
+
+                }
+                else
+                {
+
+                    return "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return returnValue;
+
+        }
     }
 }

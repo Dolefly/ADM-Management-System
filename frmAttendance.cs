@@ -106,7 +106,7 @@ namespace ADM_Management_System
             return returnValue;
         }
 
-        public static string GetRetired(string TSC_No)//SELECT MEMBER STATUS EITHER RETIRED or WITHDRAWN
+        public static string GetStatus(string TSC_No)//SELECT MEMBER STATUS EITHER RETIRED or WITHDRAWN
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
             string retiredValue = null;
@@ -151,10 +151,10 @@ namespace ADM_Management_System
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteNonQuery();
 
-                MessageBox.Show(lblName.Text + " marked as present.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(lblName.Text + " successfuly marked!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
           }
             catch(Exception ex) {
-                MessageBox.Show(lblName.Text + " has already been marked as present!","Attendance",MessageBoxButtons.OK,MessageBoxIcon.Error  );
+                MessageBox.Show(lblName.Text + " has already been marked as present!","Confirmation",MessageBoxButtons.OK,MessageBoxIcon.Error  );
             }
             finally
             {
@@ -363,13 +363,26 @@ namespace ADM_Management_System
         private void Button1_Click(object sender, EventArgs e)
         {
             var memberNO = txtFind.Text;
-            var tsc = GetRetired(memberNO);
+            var tsc = GetStatus(memberNO);
 
             if (tsc =="50")
             {
-                MessageBox.Show(lblName.Text + " is retired member");
+                MessageBox.Show(lblName.Text + " is retired member","Confirmation",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
-            else
+            
+            else if (tsc == "20")
+            {
+                MessageBox.Show(lblName.Text + " has WITHDRAWN for the society!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (tsc == "30")
+            {
+                MessageBox.Show(lblName.Text + " has been TRANSFERED and no longer our delegate!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (tsc == "40")
+            {
+                MessageBox.Show(lblName.Text + " is a DECEASED member!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if(tsc == "10")
             {
                 if (txtFind.Text != "")
                 {

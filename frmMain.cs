@@ -145,9 +145,11 @@ namespace ADM_Management_System
             
             if(uRole != "")
             {
-                frmRBAC rb = new frmRBAC();
-                rb.Text = tspUser.Text;
-                rb.ShowDialog();
+                //frmRBAC rb = new frmRBAC();
+                //rb.Text = tspUser.Text;
+                //rb.ShowDialog();
+                frmUser ur = new frmUser();
+                ur.ShowDialog();
             }
             else
             {

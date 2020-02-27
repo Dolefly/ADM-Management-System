@@ -34,10 +34,12 @@ namespace ADM_Management_System
                 var cmd = new MySqlCommand(sql, conn);
                 var dr = cmd.ExecuteReader();
 
+                cmbUsernameRole.Items.Clear();
                 cmbRole.Items.Clear();
                 while (dr.Read())
                 {
                     cmbRole.Items.Add(dr.GetString("role_Name"));
+                    cmbUsernameRole.Items.Add(dr.GetString("role_Name"));
 
                 }
 
@@ -51,6 +53,11 @@ namespace ADM_Management_System
                 conn.Close();
             }
         }
+
+        void GetPrivilegesUser()
+        {
+           
+        }
         void GetUserNames()
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
@@ -63,9 +70,11 @@ namespace ADM_Management_System
                 var dr = cmd.ExecuteReader();
 
                 cmbUserName.Items.Clear();
+               
                 while (dr.Read())
                 {
                     cmbUserName.Items.Add(dr.GetString("Username"));
+                   
 
                 }
 
@@ -108,6 +117,16 @@ namespace ADM_Management_System
             {
                 conn.Close();
             }
+        }
+
+        private void cmbUserName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            //GetUserNames();
         }
     }
 }

@@ -87,7 +87,7 @@
             // rolesToolStripMenuItem1
             // 
             this.rolesToolStripMenuItem1.Name = "rolesToolStripMenuItem1";
-            this.rolesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.rolesToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.rolesToolStripMenuItem1.Text = "User Manager";
             this.rolesToolStripMenuItem1.Click += new System.EventHandler(this.RolesToolStripMenuItem1_Click);
             // 
@@ -97,7 +97,7 @@
             this.connectivityToolStripMenuItem,
             this.rateToolStripMenuItem});
             this.dBManagerToolStripMenuItem.Name = "dBManagerToolStripMenuItem";
-            this.dBManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dBManagerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.dBManagerToolStripMenuItem.Text = "DB Manager";
             // 
             // connectivityToolStripMenuItem
@@ -233,7 +233,7 @@
             this.btnAttendance.Name = "btnAttendance";
             this.btnAttendance.Size = new System.Drawing.Size(167, 51);
             this.btnAttendance.TabIndex = 1;
-            this.btnAttendance.Text = "ATTENDANCE";
+            this.btnAttendance.Text = "POS";
             this.btnAttendance.UseVisualStyleBackColor = false;
             this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
