@@ -30,13 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dBManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -49,6 +47,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAttendance = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.privelegesManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -58,9 +57,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.helpToolStripMenuItem,
+            this.employeesToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -68,63 +66,52 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rolesToolStripMenuItem1,
-            this.dBManagerToolStripMenuItem});
+            this.dBManagerToolStripMenuItem,
+            this.rateToolStripMenuItem1,
+            this.privelegesManagerToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.editToolStripMenuItem.Text = "Settings";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
-            // rolesToolStripMenuItem1
-            // 
-            this.rolesToolStripMenuItem1.Name = "rolesToolStripMenuItem1";
-            this.rolesToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
-            this.rolesToolStripMenuItem1.Text = "User Manager";
-            this.rolesToolStripMenuItem1.Click += new System.EventHandler(this.RolesToolStripMenuItem1_Click);
-            // 
             // dBManagerToolStripMenuItem
             // 
-            this.dBManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.connectivityToolStripMenuItem,
-            this.rateToolStripMenuItem});
             this.dBManagerToolStripMenuItem.Name = "dBManagerToolStripMenuItem";
-            this.dBManagerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.dBManagerToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.dBManagerToolStripMenuItem.Text = "DB Manager";
+            this.dBManagerToolStripMenuItem.Click += new System.EventHandler(this.dBManagerToolStripMenuItem_Click);
             // 
-            // connectivityToolStripMenuItem
+            // rateToolStripMenuItem1
             // 
-            this.connectivityToolStripMenuItem.Name = "connectivityToolStripMenuItem";
-            this.connectivityToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.connectivityToolStripMenuItem.Text = "Connectivity";
-            this.connectivityToolStripMenuItem.Click += new System.EventHandler(this.ConnectivityToolStripMenuItem_Click);
+            this.rateToolStripMenuItem1.Name = "rateToolStripMenuItem1";
+            this.rateToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
+            this.rateToolStripMenuItem1.Text = "Allowance Rate";
+            this.rateToolStripMenuItem1.Click += new System.EventHandler(this.rateToolStripMenuItem1_Click);
             // 
-            // rateToolStripMenuItem
+            // employeesToolStripMenuItem
             // 
-            this.rateToolStripMenuItem.Name = "rateToolStripMenuItem";
-            this.rateToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.rateToolStripMenuItem.Text = "Rate";
-            this.rateToolStripMenuItem.Click += new System.EventHandler(this.RateToolStripMenuItem_Click);
+            this.employeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manageToolStripMenuItem});
+            this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.employeesToolStripMenuItem.Text = "Employees";
             // 
-            // helpToolStripMenuItem
+            // manageToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
+            this.manageToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.manageToolStripMenuItem.Text = "Manage";
+            this.manageToolStripMenuItem.Click += new System.EventHandler(this.manageToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -251,6 +238,12 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // privelegesManagerToolStripMenuItem
+            // 
+            this.privelegesManagerToolStripMenuItem.Name = "privelegesManagerToolStripMenuItem";
+            this.privelegesManagerToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.privelegesManagerToolStripMenuItem.Text = "Priveleges Manager";
+            // 
             // pnMain
             // 
             this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
@@ -299,9 +292,7 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Panel pnMain;
         public System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         public System.Windows.Forms.Button btnAttendance;
         public System.Windows.Forms.Button button1;
@@ -311,10 +302,11 @@
         private System.Windows.Forms.ToolStripStatusLabel tspUserID;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         public System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dBManagerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem connectivityToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rateToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem privelegesManagerToolStripMenuItem;
     }
 }
 

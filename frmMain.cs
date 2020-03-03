@@ -199,7 +199,7 @@ namespace ADM_Management_System
         private void Button2_Click(object sender, EventArgs e)
         {
             var uName = tspUser.Text;
-            var rID = 2;
+            var rID = 3;//Resource ID in resource Table
 
             var uRole = myFunctions.GetRBAC(uName, rID);
 
@@ -213,5 +213,71 @@ namespace ADM_Management_System
             }
 
         }
-    } 
+
+        private void manageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var uName = tspUser.Text;
+            var rID = 1;
+
+            var uRole = myFunctions.GetRBAC(uName, rID);
+
+            if (uRole != "")
+            {
+                //frmRBAC rb = new frmRBAC();
+                //rb.Text = tspUser.Text;
+                //rb.ShowDialog();
+                frmUser ur = new frmUser();
+                ur.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You dont have privileges to access this module!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+        }
+
+        private void dBManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var uName = tspUser.Text;
+            var rID = 1;
+
+            var uRole = myFunctions.GetRBAC(uName, rID);
+
+            if (uRole != "")
+            {
+                DBConnector db = new DBConnector();
+                db.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You dont have privileges to access this module!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void rateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var uName = tspUser.Text;
+            var rID = 1;
+
+            var uRole = myFunctions.GetRBAC(uName, rID);
+
+            if (uRole != "")
+            {
+                frmRate rt = new frmRate();
+                rt.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You dont have privileges to access this module!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout ab = new frmAbout();
+            ab.ShowDialog();
+        }
+    }
+    
 }

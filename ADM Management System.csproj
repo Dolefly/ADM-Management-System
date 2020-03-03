@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>focus_icon.ico</ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -87,6 +87,12 @@
     </Compile>
     <Compile Include="DBMYSQLUtils.cs" />
     <Compile Include="DBUtils.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     <EmbeddedResource Include="DBConnector.resx">
       <DependentUpon>DBConnector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAttendance.resx">
       <DependentUpon>frmAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +298,7 @@
   <ItemGroup>
     <Content Include="focus64_lnC_1.ico" />
     <Content Include="focus_icon.ico" />
+    <Content Include="logo.ico" />
     <None Include="Resources\target1.png" />
     <None Include="Resources\target.png" />
     <None Include="RegisterDS.xsc">
