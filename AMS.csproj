@@ -7,7 +7,7 @@
     <ProjectGuid>{7F20FF12-FA81-49E4-9BBE-D4DEC672E529}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ADM_Management_System</RootNamespace>
-    <AssemblyName>ADM Management System</AssemblyName>
+    <AssemblyName>AMS</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
