@@ -95,6 +95,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CompanyDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="crtFilterByDivision.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crtFilterByDivision.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="crtRegister.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +121,17 @@
     </Compile>
     <Compile Include="DBMYSQLUtils.cs" />
     <Compile Include="DBUtils.cs" />
+    <Compile Include="FilterByDivision.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FilterByDivision.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FilterByDivisionRPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterByDivisionRPT.Designer.cs">
+      <DependentUpon>FilterByDivisionRPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +239,10 @@
     <Compile Include="TransRPT.Designer.cs">
       <DependentUpon>TransRPT.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="crtFilterByDivision.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crtFilterByDivision.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="crtRegister.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crtRegister.cs</LastGenOutput>
@@ -232,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DBConnector.resx">
       <DependentUpon>DBConnector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterByDivisionRPT.resx">
+      <DependentUpon>FilterByDivisionRPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
@@ -299,6 +323,17 @@
     </None>
     <None Include="CompanyDS.xss">
       <DependentUpon>CompanyDS.xsd</DependentUpon>
+    </None>
+    <None Include="FilterByDivision.xsc">
+      <DependentUpon>FilterByDivision.xsd</DependentUpon>
+    </None>
+    <None Include="FilterByDivision.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FilterByDivision.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FilterByDivision.xss">
+      <DependentUpon>FilterByDivision.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ADM Management System")]
-[assembly: AssemblyDescription("Application used to manage ADM attendance.")]
+[assembly: AssemblyTitle("AMS Application")]
+[assembly: AssemblyDescription("AMS Application helps to manage Annual Delegates meetings. This include Delegates membership management,POS module to help pay sitting allowances and other expenses dusirng this session. Reports for transactions carried out, Delegate category reports and full master file reports.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DEVELOP254 LTD")]
-[assembly: AssemblyProduct("ADM Management System")]
+[assembly: AssemblyProduct("AMS System")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

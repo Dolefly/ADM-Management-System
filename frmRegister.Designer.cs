@@ -45,12 +45,18 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chkDivision = new System.Windows.Forms.CheckBox();
+            this.cmbDivision = new System.Windows.Forms.ComboBox();
+            this.lblDivisionID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblDivisionID);
+            this.panel1.Controls.Add(this.cmbDivision);
+            this.panel1.Controls.Add(this.chkDivision);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.btnSearch);
@@ -61,7 +67,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 440);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 44);
+            this.panel1.Size = new System.Drawing.Size(1056, 44);
             this.panel1.TabIndex = 1;
             // 
             // button2
@@ -70,7 +76,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(353, 3);
+            this.button2.Location = new System.Drawing.Point(619, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 38);
             this.button2.TabIndex = 6;
@@ -84,7 +90,7 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(463, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(509, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(104, 38);
             this.btnRefresh.TabIndex = 5;
@@ -121,7 +127,7 @@
             this.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnNew.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNew.ForeColor = System.Drawing.Color.White;
-            this.BtnNew.Location = new System.Drawing.Point(573, 3);
+            this.BtnNew.Location = new System.Drawing.Point(729, 3);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(104, 38);
             this.BtnNew.TabIndex = 3;
@@ -136,7 +142,7 @@
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(683, 3);
+            this.btnRemove.Location = new System.Drawing.Point(839, 3);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(104, 38);
             this.btnRemove.TabIndex = 4;
@@ -150,7 +156,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(793, 3);
+            this.button1.Location = new System.Drawing.Point(949, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 38);
             this.button1.TabIndex = 0;
@@ -164,7 +170,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(900, 440);
+            this.panel3.Size = new System.Drawing.Size(1056, 440);
             this.panel3.TabIndex = 3;
             // 
             // lvDelegates
@@ -183,7 +189,7 @@
             this.lvDelegates.HideSelection = false;
             this.lvDelegates.Location = new System.Drawing.Point(0, 0);
             this.lvDelegates.Name = "lvDelegates";
-            this.lvDelegates.Size = new System.Drawing.Size(900, 440);
+            this.lvDelegates.Size = new System.Drawing.Size(1056, 440);
             this.lvDelegates.TabIndex = 0;
             this.lvDelegates.UseCompatibleStateImageBehavior = false;
             this.lvDelegates.View = System.Windows.Forms.View.Details;
@@ -225,12 +231,47 @@
             this.columnHeader7.Text = "Status";
             this.columnHeader7.Width = 80;
             // 
+            // chkDivision
+            // 
+            this.chkDivision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkDivision.AutoSize = true;
+            this.chkDivision.Location = new System.Drawing.Point(270, 19);
+            this.chkDivision.Name = "chkDivision";
+            this.chkDivision.Size = new System.Drawing.Size(78, 17);
+            this.chkDivision.TabIndex = 7;
+            this.chkDivision.Text = "By Division";
+            this.chkDivision.UseVisualStyleBackColor = true;
+            this.chkDivision.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // cmbDivision
+            // 
+            this.cmbDivision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDivision.Enabled = false;
+            this.cmbDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDivision.FormattingEnabled = true;
+            this.cmbDivision.Location = new System.Drawing.Point(354, 8);
+            this.cmbDivision.Name = "cmbDivision";
+            this.cmbDivision.Size = new System.Drawing.Size(149, 28);
+            this.cmbDivision.TabIndex = 8;
+            this.cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
+            // 
+            // lblDivisionID
+            // 
+            this.lblDivisionID.AutoSize = true;
+            this.lblDivisionID.Location = new System.Drawing.Point(285, 5);
+            this.lblDivisionID.Name = "lblDivisionID";
+            this.lblDivisionID.Size = new System.Drawing.Size(55, 13);
+            this.lblDivisionID.TabIndex = 9;
+            this.lblDivisionID.Text = "DivisionID";
+            this.lblDivisionID.Visible = false;
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(900, 484);
+            this.ClientSize = new System.Drawing.Size(1056, 484);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -268,5 +309,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbDivision;
+        private System.Windows.Forms.CheckBox chkDivision;
+        private System.Windows.Forms.Label lblDivisionID;
     }
 }

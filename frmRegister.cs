@@ -33,6 +33,7 @@ namespace ADM_Management_System
         private void FrmRegister_Load(object sender, EventArgs e)
         {
             MASTER_REGISTER();
+            GetDivisions();
         }
        public void MASTER_REGISTER()
         {
@@ -63,7 +64,49 @@ namespace ADM_Management_System
 
                 while (dr2.Read())
                 {
-                    this.Text = ("Total Delegates:" + dr2.GetString("Total"));
+                    this.Text = ("Total: " + dr2.GetString("Total"));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void FilterByDivision()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            try
+            {
+                var divID = lblDivisionID.Text;
+                var sql = $"SELECT Register.TSC_No,Register.ID_Number,Register.`Name`,Register.Phone,School.`Name` AS School,Division.DivisionName AS Division,Status_Code.`Status` FROM Register INNER JOIN School ON School.Tsc_No = Register.TSC_No INNER JOIN Division ON Register.Division_ID = Division.ID INNER JOIN Status_Code ON Register.`Status` = Status_Code.Status_Code WHERE Register.Division_ID='{divID}' ORDER BY Register.TSC_No ASC";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+                lvDelegates.Items.Clear();
+                while (dr.Read())
+                {
+                    var ls = lvDelegates.Items.Add(dr.GetString("TSC_No"));
+                    ls.SubItems.Add(dr.GetString("ID_Number"));
+                    ls.SubItems.Add(dr.GetString("Name"));
+                    ls.SubItems.Add(dr.GetString("Phone"));
+                    ls.SubItems.Add(dr.GetString("School"));
+                    ls.SubItems.Add(dr.GetString("Division"));
+                    ls.SubItems.Add(dr.GetString("Status"));
+
+                }
+                dr.Dispose();
+
+                var sql2 = $"SELECT COUNT(*) AS Total FROM Register WHERE Register.Division_ID='{divID}'";
+                var cmd2 = new MySqlCommand(sql2, conn);
+                var dr2 = cmd2.ExecuteReader();
+
+                while (dr2.Read())
+                {
+                    this.Text = ("Total: " + dr2.GetString("Total"));
                 }
             }
             catch (Exception ex)
@@ -194,7 +237,15 @@ namespace ADM_Management_System
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            MASTER_REGISTER();
+            if (chkDivision.Checked == true)
+            {
+                FilterByDivision();
+            }
+            else if(chkDivision.Checked == false)
+            {
+                MASTER_REGISTER();
+            }
+           
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
@@ -213,9 +264,91 @@ namespace ADM_Management_System
         {
             // frmRPTregister rt = new frmRPTregister();
             //rt.ShowDialog();
+            if (chkDivision.Checked == true)
+            {
+                FilterByDivisionRPT fd = new FilterByDivisionRPT();
+                fd.Text = cmbDivision.Text;
+                fd.lblDivisionID.Text = lblDivisionID.Text;
+                fd.ShowDialog();
+                
+            }
+            else if(chkDivision.Checked == false)
+            {
+                RegisterRPT rt = new RegisterRPT();
+                rt.ShowDialog();
+            }
 
-            RegisterRPT rt = new RegisterRPT();
-            rt.ShowDialog();
+           
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkDivision.Checked == true)
+            {
+                cmbDivision.Enabled = true;
+            }
+            else if (chkDivision.Checked == false)
+            {
+                cmbDivision.Enabled = false;
+            }
+        }
+        void GetDivisions()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            try
+            {
+                var sql = "SELECT * FROM Division ORDER BY DivisionName ASC";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+                cmbDivision.Items.Clear();
+
+                while (dr.Read())
+                {
+                    cmbDivision.Items.Add(dr.GetString("DivisionName"));
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        void GetDivisionID()
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            try
+            {
+                var DivName = cmbDivision.SelectedItem.ToString();
+                var sql = $"SELECT * FROM Division WHERE DivisionName='{DivName}'";
+                conn.Open();
+                var cmd = new MySqlCommand(sql, conn);
+                var dr = cmd.ExecuteReader();
+
+               // cmbDivision.Items.Clear();
+
+                while (dr.Read())
+                {
+                    lblDivisionID.Text = dr.GetString("ID");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        private void cmbDivision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetDivisionID();
         }
     }
 }
