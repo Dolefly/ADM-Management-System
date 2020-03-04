@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDivisionID = new System.Windows.Forms.Label();
+            this.cmbDivision = new System.Windows.Forms.ComboBox();
+            this.chkDivision1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -45,9 +48,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chkDivision = new System.Windows.Forms.CheckBox();
-            this.cmbDivision = new System.Windows.Forms.ComboBox();
-            this.lblDivisionID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             this.panel1.Controls.Add(this.lblDivisionID);
             this.panel1.Controls.Add(this.cmbDivision);
-            this.panel1.Controls.Add(this.chkDivision);
+            this.panel1.Controls.Add(this.chkDivision1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.btnSearch);
@@ -69,6 +69,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1056, 44);
             this.panel1.TabIndex = 1;
+            // 
+            // lblDivisionID
+            // 
+            this.lblDivisionID.AutoSize = true;
+            this.lblDivisionID.Location = new System.Drawing.Point(285, 5);
+            this.lblDivisionID.Name = "lblDivisionID";
+            this.lblDivisionID.Size = new System.Drawing.Size(55, 13);
+            this.lblDivisionID.TabIndex = 9;
+            this.lblDivisionID.Text = "DivisionID";
+            this.lblDivisionID.Visible = false;
+            this.lblDivisionID.Click += new System.EventHandler(this.lblDivisionID_Click);
+            // 
+            // cmbDivision
+            // 
+            this.cmbDivision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDivision.Enabled = false;
+            this.cmbDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDivision.FormattingEnabled = true;
+            this.cmbDivision.Location = new System.Drawing.Point(354, 8);
+            this.cmbDivision.Name = "cmbDivision";
+            this.cmbDivision.Size = new System.Drawing.Size(149, 28);
+            this.cmbDivision.TabIndex = 8;
+            this.cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
+            // 
+            // chkDivision1
+            // 
+            this.chkDivision1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkDivision1.AutoSize = true;
+            this.chkDivision1.Location = new System.Drawing.Point(270, 19);
+            this.chkDivision1.Name = "chkDivision1";
+            this.chkDivision1.Size = new System.Drawing.Size(78, 17);
+            this.chkDivision1.TabIndex = 7;
+            this.chkDivision1.Text = "By Division";
+            this.chkDivision1.UseVisualStyleBackColor = true;
+            this.chkDivision1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button2
             // 
@@ -101,13 +137,13 @@
             // btnSearch
             // 
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Lucida Sans Unicode", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(134, 3);
+            this.btnSearch.Location = new System.Drawing.Point(130, 9);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(104, 38);
+            this.btnSearch.Size = new System.Drawing.Size(31, 26);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "?";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtFind
@@ -120,6 +156,7 @@
             this.txtFind.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFind.TextChanged += new System.EventHandler(this.TxtFind_TextChanged);
             this.txtFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtFind_KeyPress);
+            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
             // 
             // BtnNew
             // 
@@ -231,41 +268,6 @@
             this.columnHeader7.Text = "Status";
             this.columnHeader7.Width = 80;
             // 
-            // chkDivision
-            // 
-            this.chkDivision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkDivision.AutoSize = true;
-            this.chkDivision.Location = new System.Drawing.Point(270, 19);
-            this.chkDivision.Name = "chkDivision";
-            this.chkDivision.Size = new System.Drawing.Size(78, 17);
-            this.chkDivision.TabIndex = 7;
-            this.chkDivision.Text = "By Division";
-            this.chkDivision.UseVisualStyleBackColor = true;
-            this.chkDivision.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // cmbDivision
-            // 
-            this.cmbDivision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDivision.Enabled = false;
-            this.cmbDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDivision.FormattingEnabled = true;
-            this.cmbDivision.Location = new System.Drawing.Point(354, 8);
-            this.cmbDivision.Name = "cmbDivision";
-            this.cmbDivision.Size = new System.Drawing.Size(149, 28);
-            this.cmbDivision.TabIndex = 8;
-            this.cmbDivision.SelectedIndexChanged += new System.EventHandler(this.cmbDivision_SelectedIndexChanged);
-            // 
-            // lblDivisionID
-            // 
-            this.lblDivisionID.AutoSize = true;
-            this.lblDivisionID.Location = new System.Drawing.Point(285, 5);
-            this.lblDivisionID.Name = "lblDivisionID";
-            this.lblDivisionID.Size = new System.Drawing.Size(55, 13);
-            this.lblDivisionID.TabIndex = 9;
-            this.lblDivisionID.Text = "DivisionID";
-            this.lblDivisionID.Visible = false;
-            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,7 +312,8 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cmbDivision;
-        private System.Windows.Forms.CheckBox chkDivision;
         private System.Windows.Forms.Label lblDivisionID;
+        private System.Windows.Forms.RadioButton chkDivision;
+        private System.Windows.Forms.CheckBox chkDivision1;
     }
 }
