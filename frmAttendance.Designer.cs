@@ -87,7 +87,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1057, 72);
@@ -99,7 +99,7 @@
             this.lblDivision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDivision.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDivision.Location = new System.Drawing.Point(802, 31);
+            this.lblDivision.Location = new System.Drawing.Point(802, 36);
             this.lblDivision.Name = "lblDivision";
             this.lblDivision.Size = new System.Drawing.Size(158, 29);
             this.lblDivision.TabIndex = 7;
@@ -110,7 +110,7 @@
             this.lblSchool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSchool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchool.Location = new System.Drawing.Point(595, 31);
+            this.lblSchool.Location = new System.Drawing.Point(595, 36);
             this.lblSchool.Name = "lblSchool";
             this.lblSchool.Size = new System.Drawing.Size(201, 29);
             this.lblSchool.TabIndex = 6;
@@ -121,7 +121,7 @@
             this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(306, 31);
+            this.lblName.Location = new System.Drawing.Point(306, 36);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(283, 29);
             this.lblName.TabIndex = 5;
@@ -131,7 +131,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(802, 14);
+            this.label4.Location = new System.Drawing.Point(799, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 17);
             this.label4.TabIndex = 4;
@@ -183,7 +183,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(164, 13);
+            this.label1.Location = new System.Drawing.Point(164, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 1;
@@ -192,7 +192,7 @@
             // txtFind
             // 
             this.txtFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFind.Location = new System.Drawing.Point(164, 33);
+            this.txtFind.Location = new System.Drawing.Point(164, 37);
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(140, 29);
             this.txtFind.TabIndex = 0;
@@ -328,6 +328,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.White;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tspRate,
@@ -380,7 +381,6 @@
             this.groupBox3.Size = new System.Drawing.Size(1057, 359);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "DELEGATE PRESENT LIST";
             // 
             // lvAttendance
             // 
@@ -417,7 +417,6 @@
             this.groupBox4.Size = new System.Drawing.Size(577, 359);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "EXPENSE";
             // 
             // lvExpense
             // 
@@ -455,14 +454,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(34)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1057, 518);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAttendance";
             this.Text = "POS MODULE";

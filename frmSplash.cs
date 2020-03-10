@@ -100,12 +100,34 @@ namespace ADM_Management_System
             if(timeLeft > 90)
             {
                 timeLeft = timeLeft -1;
+                progressBar1.Value = 10;
                 lblSettings.Text = "Getting registry settings..";
+            }
+            else if (timeLeft > 70)
+            {
+                timeLeft = timeLeft - 1;
+                progressBar1.Value = 30 ;
+                lblSettings.Text = "Saving Registry Settings..";
             }
             else if(timeLeft > 50)
             {
                 timeLeft = timeLeft - 1;
+                progressBar1.Value = 50;
                 lblSettings.Text = "Getting database settings..";
+               
+            }
+            else if (timeLeft > 30)
+            {
+                timeLeft = timeLeft - 1;
+                progressBar1.Value = 70;
+                lblSettings.Text = "Testing database settings..";
+              
+            }
+            else if(timeLeft > 10)
+            {
+                timeLeft = timeLeft - 1;
+                progressBar1.Value = 100;
+              //  lblSettings.Text = "All settings saved!";
             }
             else
             {

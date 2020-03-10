@@ -48,11 +48,12 @@
             // lblDivisionID
             // 
             this.lblDivisionID.AutoSize = true;
-            this.lblDivisionID.Location = new System.Drawing.Point(119, 27);
+            this.lblDivisionID.Location = new System.Drawing.Point(52, 86);
             this.lblDivisionID.Name = "lblDivisionID";
             this.lblDivisionID.Size = new System.Drawing.Size(65, 13);
             this.lblDivisionID.TabIndex = 1;
             this.lblDivisionID.Text = "lblDivisionID";
+            this.lblDivisionID.Visible = false;
             // 
             // FilterByDivisionRPT
             // 
