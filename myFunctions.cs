@@ -45,8 +45,25 @@ namespace ADM_Management_System
         }
         public static string GetRegistrySettings() {
             //opening the subkey  
-            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\amsSettings");
-            return key.ToString();
+            string cUser = "";
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\amsSettings");
+                if (cUser != "")
+                {
+                    cUser = key.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No settings Found!");
+                    new DBConnector().ShowDialog();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return cUser;
         }
         public static bool IsServerConnected()
         {

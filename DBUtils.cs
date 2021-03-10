@@ -10,7 +10,13 @@ namespace ADM_Management_System
         public static MySqlConnection GetDBConnection()
 
         {
-           
+            var host = "";
+            var port = 3306;
+            var database="adm";
+            var username = "";
+            var password = "";
+            try
+            {
                 var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\amsSettings");
 
                 var sIP = key.GetValue("ServerIP").ToString();
@@ -19,12 +25,16 @@ namespace ADM_Management_System
                 var sPass = key.GetValue("ServerPass").ToString();
 
 
-                var host = sIP;
-                var port = sPort;
-                var database = "adm";
-                var username = sUsername;
-                var password = sPass;
-
+                host = sIP;
+                port = sPort;
+                //database = "adm";
+                username = sUsername;
+                password = sPass;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
                 return DBMYSQLUtils.GetDBConnection(host, port, database, username, password);
            
         }

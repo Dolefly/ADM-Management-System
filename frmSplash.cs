@@ -34,9 +34,10 @@ namespace ADM_Management_System
                 if (regKey == "")
                 {
                     lblSettings.ForeColor = Color.Red;
-                    lblSettings.Text = ("No settings found!");
+                    lblSettings.Text = ("No settings found! ESC to Close!");
                     lblDBSettings.Visible = true;
                     btnRefresh.Visible = true;
+                   // btnExit.Visible = true;
                 }
                 else if(dbSettings == true)
                 {
@@ -48,9 +49,10 @@ namespace ADM_Management_System
                 else if (dbSettings == false)
                 {
                     lblSettings.ForeColor = Color.Red;
-                    lblSettings.Text = "No server found!";
+                    lblSettings.Text = "No server found! ESC to Close!";
                     lblDBSettings.Visible = true;
                     btnRefresh.Visible = true;
+                   // btnExit.Visible = true;
                 }
                 
             }
@@ -82,7 +84,18 @@ namespace ADM_Management_System
 
         private void FrmSplash_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if(e.KeyCode == Keys.Escape)
+            {
+                DialogResult rs = MessageBox.Show("Are you sure you want to EXIT?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(rs == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+               else if(rs == DialogResult.No)
+                {
+
+                }
+            }
             }
 
         private void FrmSplash_KeyUp(object sender, KeyEventArgs e)
@@ -134,6 +147,11 @@ namespace ADM_Management_System
                timer1.Stop();
                 GetSettings();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     

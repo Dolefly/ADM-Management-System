@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportTitle" targetNamespace="http://tempuri.org/ReportTitle.xsd" xmlns:mstns="http://tempuri.org/ReportTitle.xsd" xmlns="http://tempuri.org/ReportTitle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportTitle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportTitle" msprop:Generator_UserDSName="ReportTitle">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtTitle" msprop:Generator_TableClassName="dtTitleDataTable" msprop:Generator_TableVarName="tabledtTitle" msprop:Generator_TablePropName="dtTitle" msprop:Generator_RowDeletingName="dtTitleRowDeleting" msprop:Generator_RowChangingName="dtTitleRowChanging" msprop:Generator_RowEvHandlerName="dtTitleRowChangeEventHandler" msprop:Generator_RowDeletedName="dtTitleRowDeleted" msprop:Generator_UserTableName="dtTitle" msprop:Generator_RowChangedName="dtTitleRowChanged" msprop:Generator_RowEvArgName="dtTitleRowChangeEvent" msprop:Generator_RowClassName="dtTitleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

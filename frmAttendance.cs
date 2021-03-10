@@ -68,17 +68,17 @@ namespace ADM_Management_System
             {
                 conn.Close();
             }
-        }
+        }//Main Method
 
         public static string GetRate()
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
+            var rate = DateTime.Now.Year;
             string returnValue = null;
            try
             {
-               
                 
-                var sql = "SELECT Amount FROM Rate WHERE Year='2020'";
+                var sql = $"SELECT Amount FROM Rate WHERE Year='{rate}'";
                 conn.Open();
                 var cmd = new MySqlCommand(sql,conn);
                 var dr = cmd.ExecuteReader();
@@ -104,7 +104,7 @@ namespace ADM_Management_System
             }
 
             return returnValue;
-        }
+        }//Payout rates for delegates sitting allowances
 
         public static string GetStatus(string TSC_No)//SELECT MEMBER STATUS EITHER RETIRED or WITHDRAWN
         {

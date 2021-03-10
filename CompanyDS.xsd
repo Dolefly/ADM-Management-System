@@ -12,12 +12,13 @@
   <xs:element name="CompanyDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CompanyDS" msprop:Generator_UserDSName="CompanyDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dtCompany" msprop:Generator_TableClassName="dtCompanyDataTable" msprop:Generator_TableVarName="tabledtCompany" msprop:Generator_TablePropName="dtCompany" msprop:Generator_RowDeletingName="dtCompanyRowDeleting" msprop:Generator_RowChangingName="dtCompanyRowChanging" msprop:Generator_RowEvHandlerName="dtCompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCompanyRowDeleted" msprop:Generator_UserTableName="dtCompany" msprop:Generator_RowChangedName="dtCompanyRowChanged" msprop:Generator_RowEvArgName="dtCompanyRowChangeEvent" msprop:Generator_RowClassName="dtCompanyRow">
+        <xs:element name="dtCompany" msprop:Generator_TableClassName="dtCompanyDataTable" msprop:Generator_TableVarName="tabledtCompany" msprop:Generator_RowChangedName="dtCompanyRowChanged" msprop:Generator_TablePropName="dtCompany" msprop:Generator_RowDeletingName="dtCompanyRowDeleting" msprop:Generator_RowChangingName="dtCompanyRowChanging" msprop:Generator_RowEvHandlerName="dtCompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="dtCompanyRowDeleted" msprop:Generator_RowClassName="dtCompanyRow" msprop:Generator_UserTableName="dtCompany" msprop:Generator_RowEvArgName="dtCompanyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CompanyName" msprop:Generator_ColumnVarNameInTable="columnCompanyName" msprop:Generator_ColumnPropNameInRow="CompanyName" msprop:Generator_ColumnPropNameInTable="CompanyNameColumn" msprop:Generator_UserColumnName="CompanyName" type="xs:string" minOccurs="0" />
               <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" type="xs:string" minOccurs="0" />
               <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" type="xs:string" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

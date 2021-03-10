@@ -20,17 +20,17 @@ namespace ADM_Management_System {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("CompanyDS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ReportTitle")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class CompanyDS : global::System.Data.DataSet {
+    public partial class ReportTitle : global::System.Data.DataSet {
         
-        private dtCompanyDataTable tabledtCompany;
+        private dtTitleDataTable tabledtTitle;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public CompanyDS() {
+        public ReportTitle() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ADM_Management_System {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected CompanyDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ReportTitle(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ADM_Management_System {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["dtCompany"] != null)) {
-                    base.Tables.Add(new dtCompanyDataTable(ds.Tables["dtCompany"]));
+                if ((ds.Tables["dtTitle"] != null)) {
+                    base.Tables.Add(new dtTitleDataTable(ds.Tables["dtTitle"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ADM_Management_System {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtCompanyDataTable dtCompany {
+        public dtTitleDataTable dtTitle {
             get {
-                return this.tabledtCompany;
+                return this.tabledtTitle;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ADM_Management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            CompanyDS cln = ((CompanyDS)(base.Clone()));
+            ReportTitle cln = ((ReportTitle)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ADM_Management_System {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["dtCompany"] != null)) {
-                    base.Tables.Add(new dtCompanyDataTable(ds.Tables["dtCompany"]));
+                if ((ds.Tables["dtTitle"] != null)) {
+                    base.Tables.Add(new dtTitleDataTable(ds.Tables["dtTitle"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ADM_Management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabledtCompany = ((dtCompanyDataTable)(base.Tables["dtCompany"]));
+            this.tabledtTitle = ((dtTitleDataTable)(base.Tables["dtTitle"]));
             if ((initTable == true)) {
-                if ((this.tabledtCompany != null)) {
-                    this.tabledtCompany.InitVars();
+                if ((this.tabledtTitle != null)) {
+                    this.tabledtTitle.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ADM_Management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "CompanyDS";
+            this.DataSetName = "ReportTitle";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/CompanyDS.xsd";
+            this.Namespace = "http://tempuri.org/ReportTitle.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabledtCompany = new dtCompanyDataTable();
-            base.Tables.Add(this.tabledtCompany);
+            this.tabledtTitle = new dtTitleDataTable();
+            base.Tables.Add(this.tabledtTitle);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializedtCompany() {
+        private bool ShouldSerializedtTitle() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ADM_Management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            CompanyDS ds = new CompanyDS();
+            ReportTitle ds = new ReportTitle();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,21 @@ namespace ADM_Management_System {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void dtCompanyRowChangeEventHandler(object sender, dtCompanyRowChangeEvent e);
+        public delegate void dtTitleRowChangeEventHandler(object sender, dtTitleRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtCompanyDataTable : global::System.Data.TypedTableBase<dtCompanyRow> {
-            
-            private global::System.Data.DataColumn columnCompanyName;
-            
-            private global::System.Data.DataColumn columnAddress;
-            
-            private global::System.Data.DataColumn columnPhone;
+        public partial class dtTitleDataTable : global::System.Data.TypedTableBase<dtTitleRow> {
             
             private global::System.Data.DataColumn columnTitle;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtCompanyDataTable() {
-                this.TableName = "dtCompany";
+            public dtTitleDataTable() {
+                this.TableName = "dtTitle";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +292,7 @@ namespace ADM_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal dtCompanyDataTable(global::System.Data.DataTable table) {
+            internal dtTitleDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,33 +309,9 @@ namespace ADM_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected dtCompanyDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected dtTitleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CompanyNameColumn {
-                get {
-                    return this.columnCompanyName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AddressColumn {
-                get {
-                    return this.columnAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PhoneColumn {
-                get {
-                    return this.columnPhone;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -363,48 +333,45 @@ namespace ADM_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtCompanyRow this[int index] {
+            public dtTitleRow this[int index] {
                 get {
-                    return ((dtCompanyRow)(this.Rows[index]));
+                    return ((dtTitleRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtCompanyRowChangeEventHandler dtCompanyRowChanging;
+            public event dtTitleRowChangeEventHandler dtTitleRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtCompanyRowChangeEventHandler dtCompanyRowChanged;
+            public event dtTitleRowChangeEventHandler dtTitleRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtCompanyRowChangeEventHandler dtCompanyRowDeleting;
+            public event dtTitleRowChangeEventHandler dtTitleRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event dtCompanyRowChangeEventHandler dtCompanyRowDeleted;
+            public event dtTitleRowChangeEventHandler dtTitleRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AdddtCompanyRow(dtCompanyRow row) {
+            public void AdddtTitleRow(dtTitleRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtCompanyRow AdddtCompanyRow(string CompanyName, string Address, string Phone, string Title) {
-                dtCompanyRow rowdtCompanyRow = ((dtCompanyRow)(this.NewRow()));
+            public dtTitleRow AdddtTitleRow(string Title) {
+                dtTitleRow rowdtTitleRow = ((dtTitleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CompanyName,
-                        Address,
-                        Phone,
                         Title};
-                rowdtCompanyRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtCompanyRow);
-                return rowdtCompanyRow;
+                rowdtTitleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtTitleRow);
+                return rowdtTitleRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                dtCompanyDataTable cln = ((dtCompanyDataTable)(base.Clone()));
+                dtTitleDataTable cln = ((dtTitleDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,55 +379,46 @@ namespace ADM_Management_System {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new dtCompanyDataTable();
+                return new dtTitleDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnCompanyName = base.Columns["CompanyName"];
-                this.columnAddress = base.Columns["Address"];
-                this.columnPhone = base.Columns["Phone"];
                 this.columnTitle = base.Columns["Title"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCompanyName = new global::System.Data.DataColumn("CompanyName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCompanyName);
-                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress);
-                this.columnPhone = new global::System.Data.DataColumn("Phone", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhone);
                 this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTitle);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtCompanyRow NewdtCompanyRow() {
-                return ((dtCompanyRow)(this.NewRow()));
+            public dtTitleRow NewdtTitleRow() {
+                return ((dtTitleRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtCompanyRow(builder);
+                return new dtTitleRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(dtCompanyRow);
+                return typeof(dtTitleRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.dtCompanyRowChanged != null)) {
-                    this.dtCompanyRowChanged(this, new dtCompanyRowChangeEvent(((dtCompanyRow)(e.Row)), e.Action));
+                if ((this.dtTitleRowChanged != null)) {
+                    this.dtTitleRowChanged(this, new dtTitleRowChangeEvent(((dtTitleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +426,8 @@ namespace ADM_Management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.dtCompanyRowChanging != null)) {
-                    this.dtCompanyRowChanging(this, new dtCompanyRowChangeEvent(((dtCompanyRow)(e.Row)), e.Action));
+                if ((this.dtTitleRowChanging != null)) {
+                    this.dtTitleRowChanging(this, new dtTitleRowChangeEvent(((dtTitleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +435,8 @@ namespace ADM_Management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.dtCompanyRowDeleted != null)) {
-                    this.dtCompanyRowDeleted(this, new dtCompanyRowChangeEvent(((dtCompanyRow)(e.Row)), e.Action));
+                if ((this.dtTitleRowDeleted != null)) {
+                    this.dtTitleRowDeleted(this, new dtTitleRowChangeEvent(((dtTitleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +444,14 @@ namespace ADM_Management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.dtCompanyRowDeleting != null)) {
-                    this.dtCompanyRowDeleting(this, new dtCompanyRowChangeEvent(((dtCompanyRow)(e.Row)), e.Action));
+                if ((this.dtTitleRowDeleting != null)) {
+                    this.dtTitleRowDeleting(this, new dtTitleRowChangeEvent(((dtTitleRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovedtCompanyRow(dtCompanyRow row) {
+            public void RemovedtTitleRow(dtTitleRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -502,7 +460,7 @@ namespace ADM_Management_System {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CompanyDS ds = new CompanyDS();
+                ReportTitle ds = new ReportTitle();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -520,7 +478,7 @@ namespace ADM_Management_System {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtCompanyDataTable";
+                attribute2.FixedValue = "dtTitleDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,63 +522,15 @@ namespace ADM_Management_System {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class dtCompanyRow : global::System.Data.DataRow {
+        public partial class dtTitleRow : global::System.Data.DataRow {
             
-            private dtCompanyDataTable tabledtCompany;
+            private dtTitleDataTable tabledtTitle;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal dtCompanyRow(global::System.Data.DataRowBuilder rb) : 
+            internal dtTitleRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabledtCompany = ((dtCompanyDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CompanyName {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtCompany.CompanyNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CompanyName\' in table \'dtCompany\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtCompany.CompanyNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Address {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtCompany.AddressColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'dtCompany\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtCompany.AddressColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Phone {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtCompany.PhoneColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Phone\' in table \'dtCompany\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtCompany.PhoneColumn] = value;
-                }
+                this.tabledtTitle = ((dtTitleDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -628,63 +538,27 @@ namespace ADM_Management_System {
             public string Title {
                 get {
                     try {
-                        return ((string)(this[this.tabledtCompany.TitleColumn]));
+                        return ((string)(this[this.tabledtTitle.TitleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Title\' in table \'dtCompany\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Title\' in table \'dtTitle\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtCompany.TitleColumn] = value;
+                    this[this.tabledtTitle.TitleColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCompanyNameNull() {
-                return this.IsNull(this.tabledtCompany.CompanyNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCompanyNameNull() {
-                this[this.tabledtCompany.CompanyNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAddressNull() {
-                return this.IsNull(this.tabledtCompany.AddressColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAddressNull() {
-                this[this.tabledtCompany.AddressColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPhoneNull() {
-                return this.IsNull(this.tabledtCompany.PhoneColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPhoneNull() {
-                this[this.tabledtCompany.PhoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTitleNull() {
-                return this.IsNull(this.tabledtCompany.TitleColumn);
+                return this.IsNull(this.tabledtTitle.TitleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTitleNull() {
-                this[this.tabledtCompany.TitleColumn] = global::System.Convert.DBNull;
+                this[this.tabledtTitle.TitleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -692,22 +566,22 @@ namespace ADM_Management_System {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class dtCompanyRowChangeEvent : global::System.EventArgs {
+        public class dtTitleRowChangeEvent : global::System.EventArgs {
             
-            private dtCompanyRow eventRow;
+            private dtTitleRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtCompanyRowChangeEvent(dtCompanyRow row, global::System.Data.DataRowAction action) {
+            public dtTitleRowChangeEvent(dtTitleRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtCompanyRow Row {
+            public dtTitleRow Row {
                 get {
                     return this.eventRow;
                 }

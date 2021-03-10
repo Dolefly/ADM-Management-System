@@ -173,7 +173,7 @@ namespace ADM_Management_System
                                 string connetionString = null;
                                 MySqlConnection cnn;
                                 connetionString =
-                                    $"server='{ip}';database=airtimeDB;uid='{username}';pwd='{pass}';port='{port}';";
+                                    $"server='{ip}';database=adm;uid='{username}';pwd='{pass}';port='{port}';";
                                 cnn = new MySqlConnection(connetionString);
                                 try
                                 {

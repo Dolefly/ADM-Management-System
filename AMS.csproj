@@ -61,7 +61,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -228,6 +228,11 @@
     <Compile Include="RegisterRPT.Designer.cs">
       <DependentUpon>RegisterRPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportTitle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportTitle.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -344,6 +349,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReportTitle.xsc">
+      <DependentUpon>ReportTitle.xsd</DependentUpon>
+    </None>
+    <None Include="ReportTitle.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportTitle.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportTitle.xss">
+      <DependentUpon>ReportTitle.xsd</DependentUpon>
+    </None>
     <None Include="TransDS.xsc">
       <DependentUpon>TransDS.xsd</DependentUpon>
     </None>
@@ -361,6 +377,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <None Include="Resources\imac_exit_24px.png" />
+    <None Include="Resources\increase_24px.png" />
+    <None Include="Resources\cash_32px.png" />
+    <None Include="Resources\clock_32px.png" />
+    <None Include="Resources\add_user_male_32px.png" />
+    <None Include="Resources\add_24px.png" />
     <None Include="Resources\target1.png" />
     <None Include="Resources\target.png" />
     <None Include="RegisterDS.xsc">
