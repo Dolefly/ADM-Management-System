@@ -17,8 +17,8 @@ namespace ADM_Management_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //frmSplash sp = new frmSplash();
-            //sp.ShowDialog();
+            frmSplash sp = new frmSplash();
+            sp.ShowDialog();
 
             Application.Run(new frmMain());
 

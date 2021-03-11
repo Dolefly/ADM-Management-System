@@ -49,15 +49,15 @@ namespace ADM_Management_System
             try
             {
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\amsSettings");
-                if (cUser != "")
+               if (key != null)
                 {
                     cUser = key.ToString();
                 }
-                else
-                {
-                    MessageBox.Show("No settings Found!");
-                    new DBConnector().ShowDialog();
-                }
+               else
+              {
+                   MessageBox.Show("No settings Found! Configure in the NEXT window!","GETTTING SETTINGS",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                   new DBConnector().ShowDialog();
+              }
             }
             catch(Exception ex)
             {

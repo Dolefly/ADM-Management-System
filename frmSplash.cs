@@ -58,8 +58,11 @@ namespace ADM_Management_System
             }
             catch(Exception ex)
             {
+
                 lblSettings.ForeColor = Color.Red;
+                MessageBox.Show(ex.Message);
                 lblSettings.Text = ("No settings found!");
+                
                 lblDBSettings.Visible = true;
                 btnRefresh.Visible = true;
 
